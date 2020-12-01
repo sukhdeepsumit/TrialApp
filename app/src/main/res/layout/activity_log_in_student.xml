@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/studentbg"
+    android:backgroundTint="#20FFFFFF"
+    android:backgroundTintMode="src_over"
+    android:orientation="vertical"
+
+    tools:context=".LogInTeacherActivity">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:id="@+id/usernameLayout"-->
+<!--        >-->
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/username"-->
+<!--            android:hint="Username"-->
+
+<!--            >-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                />-->
+
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+<!--    </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/usernameLayout"-->
+<!--            android:id="@+id/pwdLayout"-->
+<!--            >-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/pwd"-->
+<!--                android:hint="Password"-->
+<!--                app:passwordToggleEnabled="true"-->
+<!--                app:errorEnabled="true"-->
+
+<!--                >-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    />-->
+
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        </LinearLayout>-->
+
+
+
+
+
+
+
+
+
+    <TextView
+
+        android:id="@+id/slogan"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:fontFamily="@font/bungee"
+        android:text="Hello there, Welcome back!"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slogan"
+        android:hint="Reg. No.: "
+
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/username"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:hint="Password: "
+        android:inputType="textPassword"
+
+
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/pwd"/>
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Forgot Password?"-->
+    <!--        android:layout_below="@+id/pwd"-->
+    <!--        android:layout_marginLeft="210dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:id="@+id/forgotPwd"-->
+    <!--        />-->
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="LogIn"
+        android:textAllCaps="false"
+        android:layout_below="@+id/pwd"
+
+        android:background="@drawable/custom_button"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:id="@+id/login"/>
+
+
+
+
+
+
+</RelativeLayout>
