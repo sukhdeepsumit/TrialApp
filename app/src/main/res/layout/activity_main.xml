@@ -22,19 +22,12 @@
         android:layout_height="101dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
+        android:onClick="screen1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/teacher" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="49dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="26dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/student" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -45,6 +38,15 @@
         android:textColor="#E71C23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="49dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/student" />
 
     <TextView
         android:id="@+id/textView2"

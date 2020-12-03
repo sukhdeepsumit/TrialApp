@@ -2,7 +2,9 @@ package com.example.trialapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class LogInStudentActivity extends AppCompatActivity {
 
@@ -14,4 +16,6 @@ public class LogInStudentActivity extends AppCompatActivity {
         /**Ek kaam theek se kar lia kar barkhudaar*/
 
     }
+
+
 }

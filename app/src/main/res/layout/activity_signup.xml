@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signupbg"
+    android:backgroundTint="#15FFFFFF"
+    android:backgroundTintMode="src_over"
+android:orientation="vertical"
+
+    tools:context=".SignupActivity">
+
+
+    <TextView
+        android:id="@+id/textViewSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/bungee"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:layout_marginLeft="12dp"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#fff"
+        android:hint="First Name: "
+        android:layout_below="@+id/textViewSignUp"
+
+        android:layout_marginTop="52dp"
+        />
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#fff"
+        android:hint="Last Name: "
+        android:layout_below="@+id/firstName"
+        android:layout_marginTop="8dp"
+        />
+    <EditText
+        android:id="@+id/studentEmailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#fff"
+        android:hint="Email: "
+        android:layout_below="@+id/lastName"
+        android:layout_marginTop="8dp"
+        android:inputType="textEmailAddress"
+        />
+    <EditText
+        android:id="@+id/mobileNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColorHint="#fff"
+        android:hint="Contact: "
+        android:layout_below="@+id/studentEmailId"
+        android:layout_marginTop="8dp"
+        />
+    <EditText
+        android:id="@+id/signUpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+
+        android:textColorHint="#fff"
+        android:hint="Password: "
+        android:layout_below="@+id/mobileNum"
+        android:layout_marginTop="8dp"
+        />
+    <EditText
+        android:id="@+id/confirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+
+        android:textColorHint="#fff"
+        android:hint="Confirm Password: "
+        android:layout_below="@+id/signUpPassword"
+        android:layout_marginTop="8dp"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:layout_below="@+id/confirmPassword"
+        android:background="@drawable/custom_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="#fff"
+
+        android:id="@+id/signUpButton"/>
+
+
+
+
+
+
+</RelativeLayout>
