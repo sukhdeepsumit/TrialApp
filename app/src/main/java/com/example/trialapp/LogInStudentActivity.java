@@ -11,7 +11,7 @@ public class LogInStudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in_student);
 
-        /*Ek kaam theek se kar lia kar */
+        /**Ek kaam theek se kar lia kar  barkhudaar*/
 
     }
 }
