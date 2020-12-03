@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-
+//This is Teacher's activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void screen1(View v) {
 
-            Intent intent = new Intent(MainActivity.this, LogInTeacherActivity.class);
+            Intent intent = new Intent(MainActivity.this, LogInStudentActivity.class);
             startActivity(intent);
 
         }
