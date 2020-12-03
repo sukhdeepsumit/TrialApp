@@ -9,7 +9,7 @@
     android:backgroundTintMode="src_over"
     android:orientation="vertical"
 
-    tools:context=".LogInTeacherActivity">
+    tools:context=".LogInStudentActivity">
 
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
