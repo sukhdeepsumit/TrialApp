@@ -8,11 +8,9 @@
     android:backgroundTint="#40FFFFFF"
     android:backgroundTintMode="src_over"
     android:orientation="vertical"
-
     >
 
     <TextView
-
         android:id="@+id/slogan"
         android:layout_width="223dp"
         android:layout_height="wrap_content"
@@ -65,5 +63,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:id="@+id/login"/>
+
+    <TextView
+        android:id="@+id/registerLinkTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Here? Sign up!"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+
+        android:layout_below="@+id/login"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

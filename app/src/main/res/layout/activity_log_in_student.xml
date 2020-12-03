@@ -59,14 +59,6 @@
 
 <!--        </LinearLayout>-->
 
-
-
-
-
-
-
-
-
     <TextView
 
         android:id="@+id/slogan"
@@ -81,24 +73,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/slogan"
         android:hint="Reg. No.: "
-
-
+        android:textColorHint="#FFF"
         android:layout_marginTop="20dp"
         android:id="@+id/username"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
         android:hint="Password: "
         android:inputType="textPassword"
-
-
-
+        android:textColorHint="#FFF"
         android:layout_marginTop="20dp"
         android:id="@+id/pwd"/>
     <!--    <Button-->
@@ -123,8 +114,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:id="@+id/login"/>
+
     <TextView
-        android:id="@+id/registerLink"
+        android:id="@+id/registerLinkStudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Here? Sign up!"
@@ -136,8 +128,6 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
       />
-
-
-
+    
 
 </RelativeLayout>

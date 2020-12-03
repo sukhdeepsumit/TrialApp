@@ -9,19 +9,30 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-//This is Teacher's activity
+
+    ImageView student, teacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
-    public void screen1(View v) {
+        student = findViewById(R.id.student);
+        teacher = findViewById(R.id.teacher);
 
-            Intent intent = new Intent(MainActivity.this, LogInStudentActivity.class);
-            startActivity(intent);
+        student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LogInStudentActivity.class));
+            }
+        });
 
-        }
+        teacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LogInTeacherActivity.class));
+            }
+        });
     }
+}
 

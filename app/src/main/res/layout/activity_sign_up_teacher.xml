@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signupbg"
+    android:background="@drawable/signupteacherbg"
     android:backgroundTint="#15FFFFFF"
     android:backgroundTintMode="src_over"
-android:orientation="vertical"
+    android:orientation="vertical"
 
-    tools:context=".SignupActivity">
+    tools:context=".SignUpStudentActivity">
 
 
     <TextView
@@ -100,10 +100,5 @@ android:orientation="vertical"
         android:textColor="#fff"
 
         android:id="@+id/signUpButton"/>
-
-
-
-
-
 
 </RelativeLayout>
