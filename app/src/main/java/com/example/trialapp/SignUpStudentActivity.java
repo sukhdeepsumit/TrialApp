@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpStudentActivity extends AppCompatActivity {
     Button signUpStudentBtn;
@@ -26,6 +27,14 @@ public class SignUpStudentActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+        Toast.makeText(this, "Already In", Toast.LENGTH_SHORT).show();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +52,11 @@ public class SignUpStudentActivity extends AppCompatActivity {
         progressBar=findViewById(R.id.progressBar);
         mAuth= FirebaseAuth.getInstance();
 
-        if(mAuth.getCurrentUser()!=null)
-        {
-            startActivity(new Intent(getApplicationContext(),LogInStudentActivity.class));
-            finish();
-        }
+//        if(mAuth.getCurrentUser()!=null)
+//        {
+//            startActivity(new Intent(getApplicationContext(),LogInStudentActivity.class));
+//            finish();
+//        }
 
 
 
@@ -104,7 +113,7 @@ public class SignUpStudentActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.i("TAG", "createUserWithEmail:success");
                                     Toast.makeText(SignUpStudentActivity.this,"Registration Success",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),LogInStudentActivity.class));
+                                    startActivity(new Intent(SignUpStudentActivity.this,LogInStudentActivity.class));
 
 
                                 } else {

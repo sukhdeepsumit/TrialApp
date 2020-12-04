@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/slogan"
         android:hint="U.I.D.: "
+        android:textColor="#fff"
         android:textColorHint="#FFF"
         android:layout_marginTop="20dp"
         android:id="@+id/username"/>
@@ -39,18 +40,11 @@
         android:layout_below="@id/username"
         android:hint="Password: "
         android:inputType="textPassword"
+        android:textColor="#fff"
         android:textColorHint="#FFF"
         android:layout_marginTop="20dp"
         android:id="@+id/pwd"/>
-    <!--    <Button-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Forgot Password?"-->
-    <!--        android:layout_below="@+id/pwd"-->
-    <!--        android:layout_marginLeft="210dp"-->
-    <!--        android:layout_marginTop="5dp"-->
-    <!--        android:id="@+id/forgotPwd"-->
-    <!--        />-->
+
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -61,6 +55,7 @@
         android:onClick="screen1"
 
         android:layout_centerHorizontal="true"
+        android:textColor="#fff"
         android:layout_marginTop="55dp"
         android:id="@+id/login"/>
 
