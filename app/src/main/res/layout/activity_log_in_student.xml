@@ -105,7 +105,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="LogIn"
-        
+
         android:textAllCaps="false"
         android:layout_below="@+id/pwd"
 
