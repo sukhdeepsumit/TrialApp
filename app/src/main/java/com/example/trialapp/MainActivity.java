@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.trialapp.LoginActivities.LogInStudentActivity;
+import com.example.trialapp.LoginActivities.LogInTeacherActivity;
 
 public class MainActivity extends AppCompatActivity {
 

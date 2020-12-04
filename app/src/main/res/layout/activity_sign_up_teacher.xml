@@ -9,7 +9,7 @@
     android:backgroundTintMode="src_over"
     android:orientation="vertical"
 
-    tools:context=".SignUpStudentActivity">
+    tools:context=".LoginActivities.SignUpStudentActivity">
 
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_marginTop="8dp"
         />
     <EditText
-        android:id="@+id/studentEmailId"
+        android:id="@+id/teacherEmailId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="#fff"

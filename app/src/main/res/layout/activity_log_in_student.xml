@@ -9,7 +9,7 @@
     android:backgroundTintMode="src_over"
     android:orientation="vertical"
 
-    tools:context=".LogInStudentActivity">
+    tools:context=".LoginActivities.LogInStudentActivity">
 
     <TextView
 
@@ -52,12 +52,9 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="LogIn"
-
         android:textAllCaps="false"
         android:layout_below="@+id/pwd"
-
         android:background="@drawable/custom_button"
-
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:id="@+id/login"/>
@@ -75,6 +72,6 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
       />
-    
+
 
 </RelativeLayout>
