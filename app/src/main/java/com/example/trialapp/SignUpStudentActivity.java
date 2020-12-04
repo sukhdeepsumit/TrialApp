@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -40,6 +41,7 @@ public class SignUpStudentActivity extends AppCompatActivity {
         mPwd=findViewById(R.id.signUpPassword);
         mCnfPwd=findViewById(R.id.confirmPassword);
         progressBar=findViewById(R.id.progressBar);
+        mAuth= FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser()!=null)
         {
