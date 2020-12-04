@@ -66,67 +66,68 @@ public class SignUpStudentActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 final  String myEmail=mEmail.getText().toString().trim();
+                final String mobNum=mContact.getText().toString().trim();
+                final String password= mPwd.getText().toString().trim();
+                final String cnfPassword=mCnfPwd.getText().toString().trim();
+
                 if(TextUtils.isEmpty(myEmail))
                 {
                     mEmail.setError("Enter email !");
+                    mEmail.requestFocus();
                 }
 
-
-                final String mobNum=mContact.getText().toString().trim();
-                if(TextUtils.isEmpty(mobNum))
+                else if(TextUtils.isEmpty(mobNum))
                 {
                     mContact.setError("Enter email !");
+                    mContact.requestFocus();
                 }
 
-
-                final String password= mPwd.getText().toString().trim();
-
-                if(TextUtils.isEmpty(password) )
+                else if(TextUtils.isEmpty(password) )
                 {
                     mPwd.setError("Enter password !");
+                    mPwd.requestFocus();
                 }
-                if(password.length()<=6)
+               else if(password.length()<=6)
                 {
                     mPwd.setError("Password length too short");
+                    mPwd.requestFocus();
                 }
-
-                final String cnfPassword=mCnfPwd.getText().toString().trim();
-                if(TextUtils.isEmpty(cnfPassword) )
+                else if(TextUtils.isEmpty(cnfPassword) )
                 {
                     mCnfPwd.setError("Enter password again !");
+                    mCnfPwd.requestFocus();
                 }
-                if(!password.equals(cnfPassword))
+               else if(!password.equals(cnfPassword))
                 {
                     mCnfPwd.setError("Incorrect password! ");
+                    mCnfPwd.requestFocus();
                 }
-
-                progressBar.setVisibility(View.VISIBLE);
-
-
-
-
-                mAuth.createUserWithEmailAndPassword(myEmail, password)
-                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.i("TAG", "createUserWithEmail:success");
-                                    Toast.makeText(SignUpStudentActivity.this,"Registration Success",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(SignUpStudentActivity.this,LogInStudentActivity.class));
+               else {
+                    progressBar.setVisibility(View.VISIBLE);
+                    mAuth.createUserWithEmailAndPassword(myEmail, password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.i("TAG", "createUserWithEmail:success");
+                                        Toast.makeText(SignUpStudentActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(SignUpStudentActivity.this, LogInStudentActivity.class));
+                                        progressBar.setVisibility(View.GONE);
 
 
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(SignUpStudentActivity.this,"Failure" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                                    progressBar.setVisibility(View.GONE);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Toast.makeText(SignUpStudentActivity.this, "Failure" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
 
 
+                                    }
+
+                                    // ...
                                 }
-
-                                // ...
-                            }
-                        });
+                            });
+                }
 
             }
         });
