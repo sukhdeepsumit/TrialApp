@@ -1,4 +1,4 @@
-package com.example.trialapp.LoginActivities;
+package com.example.trialapp.TeacherActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;

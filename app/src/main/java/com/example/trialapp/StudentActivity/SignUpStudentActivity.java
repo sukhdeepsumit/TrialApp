@@ -1,4 +1,4 @@
-package com.example.trialapp.LoginActivities;
+package com.example.trialapp.StudentActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

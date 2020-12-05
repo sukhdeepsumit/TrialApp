@@ -1,8 +1,10 @@
-package com.example.trialapp;
+package com.example.trialapp.TeacherActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.trialapp.R;
 
 public class SubjectList extends AppCompatActivity {
 
