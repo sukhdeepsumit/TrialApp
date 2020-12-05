@@ -41,12 +41,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
 
         myAuth = FirebaseAuth.getInstance();
 
-//        goToSignUp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(LogInTeacherActivity.this, SignUpStudentActivity.class));
-//            }
-//        });
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

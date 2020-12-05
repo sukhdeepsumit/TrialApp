@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/sublistbg"
     tools:context=".TeacherActivity.SubjectList">
+
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/heading"
@@ -20,7 +23,8 @@
         android:layout_marginTop="36dp"
         android:fontFamily="@font/bungee"
         android:text="Courses Available"
-        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:textAllCaps="false"
         android:textColor="#EAF0F1"
         android:textSize="30dp"
@@ -139,6 +143,7 @@
         android:background="@drawable/custom_button"
         app:layout_constraintTop_toBottomOf="@+id/history"
         tools:layout_editor_absoluteX="161dp" />
+    </LinearLayout>
 
 </ScrollView>
 
