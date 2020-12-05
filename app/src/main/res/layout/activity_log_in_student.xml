@@ -9,7 +9,7 @@
     android:backgroundTintMode="src_over"
     android:orientation="vertical"
 
-    tools:context=".LoginActivities.LogInStudentActivity">
+    tools:context=".StudentActivity.LogInStudentActivity">
 
     <TextView
 

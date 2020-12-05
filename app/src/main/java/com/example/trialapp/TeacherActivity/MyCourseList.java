@@ -1,9 +1,11 @@
-package com.example.trialapp;
+package com.example.trialapp.TeacherActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.example.trialapp.R;
 
 public class MyCourseList extends AppCompatActivity {
 

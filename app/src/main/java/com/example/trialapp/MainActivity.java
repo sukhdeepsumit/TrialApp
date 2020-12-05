@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.trialapp.LoginActivities.LogInStudentActivity;
-import com.example.trialapp.LoginActivities.LogInTeacherActivity;
+import com.example.trialapp.StudentActivity.LogInStudentActivity;
+import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 
 public class MainActivity extends AppCompatActivity {
 
