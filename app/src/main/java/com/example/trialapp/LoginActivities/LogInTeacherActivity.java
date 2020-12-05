@@ -34,18 +34,19 @@ public class LogInTeacherActivity extends AppCompatActivity {
 
         goToSignUp = findViewById(R.id.registerLinkTeacher);
 
+        //goToSignUp = findViewById(R.id.registerLinkStudent);
         myEmail = findViewById(R.id.username);
         myPassword = findViewById(R.id.pwd);
         login = findViewById(R.id.login);
 
         myAuth = FirebaseAuth.getInstance();
 
-        goToSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LogInTeacherActivity.this, SignUpTeacherActivity.class));
-            }
-        });
+//        goToSignUp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(LogInTeacherActivity.this, SignUpStudentActivity.class));
+//            }
+//        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
