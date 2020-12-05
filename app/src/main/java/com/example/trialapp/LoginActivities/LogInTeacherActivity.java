@@ -34,7 +34,6 @@ public class LogInTeacherActivity extends AppCompatActivity {
 
         goToSignUp = findViewById(R.id.registerLinkTeacher);
 
-        goToSignUp = findViewById(R.id.registerLinkStudent);
         myEmail = findViewById(R.id.username);
         myPassword = findViewById(R.id.pwd);
         login = findViewById(R.id.login);
@@ -44,7 +43,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
         goToSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LogInTeacherActivity.this, SignUpStudentActivity.class));
+                startActivity(new Intent(LogInTeacherActivity.this, SignUpTeacherActivity.class));
             }
         });
 

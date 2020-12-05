@@ -116,23 +116,16 @@ public class SignUpStudentActivity extends AppCompatActivity {
                                         progressBar.setVisibility(View.GONE);
 
 
-                                    } else {
+                                    }
+                                    else {
                                         // If sign in fails, display a message to the user.
                                         Toast.makeText(SignUpStudentActivity.this, "Failure" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
-
-
                                     }
-
-                                    // ...
                                 }
                             });
                 }
-
             }
         });
     }
-
-
-
 }

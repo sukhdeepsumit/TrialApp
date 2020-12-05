@@ -27,6 +27,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/firstName"
         android:layout_width="match_parent"
@@ -38,6 +39,7 @@
 
         android:layout_marginTop="52dp"
         />
+
     <EditText
         android:id="@+id/lastName"
         android:layout_width="match_parent"
@@ -49,6 +51,7 @@
         android:layout_below="@+id/firstName"
         android:layout_marginTop="8dp"
         />
+
     <EditText
         android:id="@+id/teacherEmailId"
         android:layout_width="match_parent"
@@ -60,6 +63,7 @@
         android:layout_marginTop="8dp"
         android:inputType="textEmailAddress"
         />
+
     <EditText
         android:id="@+id/mobileNum"
         android:layout_width="match_parent"
@@ -68,9 +72,10 @@
         android:textColorHint="#fff"
         android:hint="Contact: "
         android:textColor="#fff"
-        android:layout_below="@+id/studentEmailId"
+        android:layout_below="@+id/teacherEmailId"
         android:layout_marginTop="8dp"
         />
+
     <EditText
         android:id="@+id/signUpPassword"
         android:layout_width="match_parent"
@@ -83,6 +88,7 @@
         android:layout_below="@+id/mobileNum"
         android:layout_marginTop="8dp"
         />
+
     <EditText
         android:id="@+id/confirmPassword"
         android:layout_width="match_parent"

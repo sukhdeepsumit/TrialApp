@@ -65,14 +65,14 @@ public class SignUpTeacherActivity extends AppCompatActivity {
         View focusView = null;
 
         //password validation
-        if(!TextUtils.isEmpty(password) && !checkPassword(password)) {
+        if(TextUtils.isEmpty(password) && !checkPassword(password)) {
             myPwd.setError("Your Password is too short");
             focusView = myPwd;
             cancel = true;
         }
 
         //email validation
-        if(!TextUtils.isEmpty(email)) {
+        if(TextUtils.isEmpty(email)) {
             myEmail.setError("Your Email is Invalid");
             focusView = myEmail;
             cancel = true;

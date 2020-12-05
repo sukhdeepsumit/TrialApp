@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         student = findViewById(R.id.student);
         teacher = findViewById(R.id.teacher);
 
