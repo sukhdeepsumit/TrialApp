@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.trialapp.MyCourseList;
 import com.example.trialapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -54,13 +55,6 @@ public class LogInTeacherActivity extends AppCompatActivity {
                 loginUserWithFirebase();
             }
         });
-
-        goToSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LogInTeacherActivity.this, SignUpTeacherActivity.class));
-            }
-        });
     }
 
     private void loginUserWithFirebase() {
@@ -84,10 +78,10 @@ public class LogInTeacherActivity extends AppCompatActivity {
                     Log.i("FINDCODE", "Message : " + task.getException());
                 }
                 else {
-                    /*Intent intent = new Intent(LogInStudentActivity.this, );
+                    Intent intent = new Intent(LogInTeacherActivity.this, MyCourseList.class);
                     finish();
                     startActivity(intent);
-                     */
+
                 }
             }
         });
