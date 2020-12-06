@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,12 +19,12 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     public static class SubjectViewHolder extends RecyclerView.ViewHolder
     {
-        Button button;
+        CheckBox checkBox;
 
 
         public SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
-            button=itemView.findViewById(R.id.button);
+            checkBox=itemView.findViewById(R.id.checkbox);
         }
     }
 
@@ -41,7 +42,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     @Override
     public void onBindViewHolder(@NonNull SubjectViewHolder holder, int position) {
-        holder.button.setText(data[position]);
+        holder.checkBox.setText(data[position]);
 
 
     }

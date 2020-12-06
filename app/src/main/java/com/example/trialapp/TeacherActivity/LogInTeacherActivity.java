@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
     TextView goToSignUp;
     EditText myEmail, myPassword;
     Button login;
+    ProgressBar progressBar;
 
     private FirebaseAuth myAuth;
 
@@ -40,6 +42,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
         login = findViewById(R.id.login);
 
         myAuth = FirebaseAuth.getInstance();
+        progressBar=findViewById(R.id.progressBar2);
 
 
 
@@ -60,6 +63,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Field is Empty", Toast.LENGTH_SHORT).show();
             return;
         }
+        progressBar.setVisibility(View.VISIBLE);
 
         Toast.makeText(getApplicationContext(), "Logging you in...", Toast.LENGTH_SHORT).show();
 
@@ -69,12 +73,14 @@ public class LogInTeacherActivity extends AppCompatActivity {
                 Log.i("LOGIN", "Was user logged in : " + task.isSuccessful());
                 if (!task.isSuccessful()) {
                     showErrorBox();
+                    progressBar.setVisibility(View.GONE);
                     Log.i("FINDCODE", "Message : " + task.getException());
                 }
                 else {
                     Intent intent = new Intent(LogInTeacherActivity.this, MyCourseList.class);
                     finish();
                     startActivity(intent);
+                    progressBar.setVisibility(View.GONE);
 
                 }
             }

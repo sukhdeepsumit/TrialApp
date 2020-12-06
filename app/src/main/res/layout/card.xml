@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
-    <Button
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="6dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+
+    <CheckBox
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/custom_button"
         android:text="Physics"
-        android:textSize="25dp"
+        android:textSize="35dp"
         android:layout_marginTop="10dp"
-        android:id="@+id/button"
-
-        android:gravity="center"
+        android:id="@+id/checkbox"
+        android:fontFamily="cursive"
         android:textStyle="bold"
+        android:gravity="center"
         />
 
 
 
+    </LinearLayout>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+</androidx.cardview.widget.CardView>
