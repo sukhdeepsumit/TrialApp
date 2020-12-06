@@ -101,7 +101,7 @@
         android:layout_marginTop="200dp"
         android:backgroundTint="#80000000"
         android:elevation="12dp"
-        app:cardCornerRadius="40dp"
+        app:cardCornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
