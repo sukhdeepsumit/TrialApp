@@ -42,7 +42,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
         login = findViewById(R.id.login);
 
         myAuth = FirebaseAuth.getInstance();
-        progressBar=findViewById(R.id.progressBar2);
+        progressBar=findViewById(R.id.progressBarForTeacher);
 
 
 
