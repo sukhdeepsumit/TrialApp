@@ -20,6 +20,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class SignUpStudentActivity extends AppCompatActivity {
     Button signUpStudentBtn;
     private FirebaseAuth mAuth;
@@ -113,15 +115,14 @@ public class SignUpStudentActivity extends AppCompatActivity {
                                         Log.i("TAG", "createUserWithEmail:success");
                                         Toast.makeText(SignUpStudentActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(SignUpStudentActivity.this, LogInStudentActivity.class));
-                                        progressBar.setVisibility(View.GONE);
 
 
                                     }
                                     else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(SignUpStudentActivity.this, "Failure" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(SignUpStudentActivity.this, "Failure" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                     }
+                                    progressBar.setVisibility(View.GONE);
                                 }
                             });
                 }
