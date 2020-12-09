@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.example.trialapp.R;
 
-//push ni ho ra bsdkkkkkkkkk
+//push ni ho ra bsdkkkkkkkkkKK
 
 public class StudentAddForm extends AppCompatActivity {
 
