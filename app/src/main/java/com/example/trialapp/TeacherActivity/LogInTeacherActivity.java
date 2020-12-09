@@ -44,6 +44,13 @@ public class LogInTeacherActivity extends AppCompatActivity {
         myAuth = FirebaseAuth.getInstance();
         progressBar=findViewById(R.id.progressBarForTeacher);
 
+        goToSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LogInTeacherActivity.this,SignUpTeacherActivity.class));
+            }
+        });
+
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +84,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
                     Log.i("FINDCODE", "Message : " + task.getException());
                 }
                 else {
-                    Intent intent = new Intent(LogInTeacherActivity.this, MyCourseList.class);
+                    Intent intent = new Intent(LogInTeacherActivity.this, StudentDetails.class);
                     finish();
                     startActivity(intent);
                     progressBar.setVisibility(View.GONE);

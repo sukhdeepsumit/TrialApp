@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".StudentActivity.StudentHomeScreen"></activity>
+        <activity android:name=".TeacherActivity.StudentAddForm" />
+        <activity android:name=".TeacherActivity.StudentDetails" />
         <activity android:name=".StudentActivity.LogInStudentActivity" />
         <activity android:name=".TeacherActivity.SignUpTeacherActivity" />
         <activity android:name=".StudentActivity.SignUpStudentActivity" />

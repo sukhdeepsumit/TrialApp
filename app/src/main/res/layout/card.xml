@@ -5,33 +5,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    app:cardElevation="0dp"
     android:layout_marginTop="8dp"
     app:cardCornerRadius="6dp">
-    <LinearLayout
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name: "
+            android:textSize="20dp"
+            android:id="@+id/name"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:background="#e55039"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject: "
+            android:textSize="20dp"
+            android:id="@+id/subject"
+            android:layout_below="@+id/name"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:background="#e55039"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact: "
+            android:textSize="20dp"
+            android:id="@+id/contact"
+            android:layout_below="@+id/subject"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:background="#e55039"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email: "
+            android:textSize="20dp"
+            android:id="@+id/email"
+            android:layout_below="@+id/contact"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:background="#e55039"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fee paid?: "
+            android:textSize="20dp"
+            android:id="@+id/feeStatus"
+            android:layout_below="@+id/email"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:background="#e55039"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:layout_below="@+id/feeStatus"
+            android:id="@+id/updateBtn"
+            android:layout_marginTop="5dp"
+            android:text="Update"
+            android:layout_marginLeft="100dp"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:layout_below="@+id/feeStatus"
+            android:id="@+id/deleteBtn"
+            android:layout_marginTop="5dp"
+            android:text="Delete"
+            android:layout_marginLeft="200dp"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20dp"/>
 
 
-
-    <CheckBox
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/custom_button"
-        android:text="Physics"
-        android:textSize="35dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/checkbox"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

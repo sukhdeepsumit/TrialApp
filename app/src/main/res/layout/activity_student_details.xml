@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mycoursebg"
-    tools:context=".TeacherActivity.MyCourseList">
+    android:backgroundTint="#20FFFFFF"
+    android:backgroundTintMode="src_over"
+    android:background="@drawable/teacherbg"
+    tools:context=".TeacherActivity.StudentDetails">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -13,7 +15,7 @@
         android:layout_height="478dp"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#80000000"
-        android:elevation="12dp"
+        android:elevation="22dp"
         app:cardCornerRadius="40dp"
         android:layout_marginTop="50dp"
         tools:listitem="@layout/my_course_list_design"
@@ -23,34 +25,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/roleView"
-        android:layout_width="277dp"
-        android:layout_height="51dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="35dp"
-        android:backgroundTint="#80000000"
-        android:elevation="12dp"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/bungee"
-            android:paddingStart="15dp"
-            android:paddingEnd="10dp"
-            android:text="Your Subjects : "
-            android:textColor="#FFF"
-            android:textSize="24sp" />
 
-    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addSubject"
