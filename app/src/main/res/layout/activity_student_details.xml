@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    tools:openDrawer="start"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#20FFFFFF"
@@ -9,8 +12,25 @@
     android:background="@drawable/teacherbg"
     tools:context=".TeacherActivity.StudentDetails">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            app:title="Welcome back !"
+            app:titleTextColor="@color/colorAccent"
+            android:background="#e55039"
+            />
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_below="@+id/toolbar"
         android:layout_width="264dp"
         android:layout_height="478dp"
         android:layout_centerHorizontal="true"
@@ -25,20 +45,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addSubject"
+            android:layout_below="@+id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/recyclerView"
+            android:elevation="6dp"
+            android:layout_marginTop="8dp"
+            app:fabSize="normal"
+            android:clickable="true"
+            android:backgroundTint="#e55039"
+            app:srcCompat="@drawable/ic_add"
+            android:focusable="true" />
 
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addSubject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="18dp"
-        android:clickable="true"
-        android:backgroundTint="#e55039"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add"
-        android:focusable="true" />
+    </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<com.google.android.material.navigation.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/navMenu"
+    app:menu="@menu/iconmenu"
+    app:headerLayout="@layout/header_menu"
+    android:layout_gravity="start"
+    />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#e17055"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:text="Our first App"
+        android:fontFamily="@font/bungee"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="cursive"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:text="Bakchodi is better than regret."
+        />
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
