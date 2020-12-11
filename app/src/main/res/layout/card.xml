@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardElevation="0dp"
-    android:background="@android:color/transparent"
+    app:cardBackgroundColor="@android:color/transparent"
     android:layout_marginTop="8dp"
     app:cardCornerRadius="6dp">
 
@@ -15,16 +15,26 @@
         android:layout_height="match_parent"
         >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Name: "
             android:textSize="20dp"
             android:id="@+id/name"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:background="#e55039"/>
+            />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/nameInput"
+           android:layout_toRightOf="@+id/name"
+           android:layout_alignParentRight="true"
+           android:layout_alignTop="@+id/name"
+           />
+
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Subject: "
             android:textSize="20dp"
@@ -32,9 +42,20 @@
             android:layout_below="@+id/name"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:background="#e55039"/>
+           />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/subjectInput"
+            android:layout_toRightOf="@+id/subject"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/subject"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Contact: "
             android:textSize="20dp"
@@ -42,9 +63,19 @@
             android:layout_below="@+id/subject"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:background="#e55039"/>
+            />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contactInput"
+            android:layout_toRightOf="@+id/contact"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/contact"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Email: "
             android:textSize="20dp"
@@ -52,9 +83,19 @@
             android:layout_below="@+id/contact"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:background="#e55039"/>
+            />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailInput"
+            android:layout_toRightOf="@+id/email"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/email"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Fee paid?: "
             android:textSize="20dp"
@@ -62,7 +103,15 @@
             android:layout_below="@+id/email"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:background="#e55039"/>
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/feeStatusInput"
+            android:layout_toRightOf="@+id/feeStatus"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/feeStatus"
+            />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
