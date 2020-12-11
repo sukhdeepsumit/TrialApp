@@ -1,4 +1,4 @@
-package com.example.trialapp.TeacherActivity;
+package com.example.trialapp.TeacherDatabase;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,7 +16,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.trialapp.R;
-import com.example.trialapp.TeacherDatabase.Model;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -29,6 +28,7 @@ public class StudentDetails extends AppCompatActivity {
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
+    MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,8 @@ public class StudentDetails extends AppCompatActivity {
                     .setQuery(FirebaseDatabase.getInstance().getReference().child("students"), Model.class)
                     .build();
 
+        adapter =new MyAdapter(options);
+        recyclerView.setAdapter(adapter);
 
         add=findViewById(R.id.addSubject);
         add.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +85,17 @@ public class StudentDetails extends AppCompatActivity {
                 return true;
             }
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }

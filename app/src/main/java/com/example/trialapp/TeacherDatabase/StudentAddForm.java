@@ -1,4 +1,4 @@
-package com.example.trialapp.TeacherActivity;
+package com.example.trialapp.TeacherDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
