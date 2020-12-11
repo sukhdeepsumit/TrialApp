@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -15,8 +16,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.trialapp.R;
+import com.example.trialapp.TeacherDatabase.Model;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class StudentDetails extends AppCompatActivity {
 
@@ -26,14 +30,20 @@ public class StudentDetails extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_student_details);
         recyclerView=findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseRecyclerOptions<Model> options =
+                new FirebaseRecyclerOptions.Builder<Model>()
+                    .setQuery(FirebaseDatabase.getInstance().getReference().child("students"), Model.class)
+                    .build();
+
+
         add=findViewById(R.id.addSubject);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +51,6 @@ public class StudentDetails extends AppCompatActivity {
                 startActivity(new Intent(StudentDetails.this, StudentAddForm.class));
             }
         });
-
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,28 +74,15 @@ public class StudentDetails extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Home opened", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
-
                     }
                     case R.id.myProfile :
                         Toast.makeText(getApplicationContext(), "My Account opened", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
-
-
-
-
                 }
-
-
                 return true;
             }
         });
-
-
-
-
-
-
 
     }
 }

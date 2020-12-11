@@ -27,23 +27,22 @@
             />
 
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="264dp"
-        android:layout_height="478dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#80000000"
-        android:elevation="22dp"
-        app:cardCornerRadius="40dp"
-        android:layout_marginTop="50dp"
-        tools:listitem="@layout/my_course_list_design"
-        android:background="@drawable/border_outside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="284dp"
+            android:layout_height="483dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/border_outside"
+            android:backgroundTint="#80000000"
+            android:elevation="22dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/card" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addSubject"
@@ -59,22 +58,14 @@
             app:srcCompat="@drawable/ic_add"
             android:focusable="true" />
 
-
-
     </RelativeLayout>
 
-
-
-
-<com.google.android.material.navigation.NavigationView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:id="@+id/navMenu"
-    app:menu="@menu/iconmenu"
-    app:headerLayout="@layout/header_menu"
-    android:layout_gravity="start"
-    />
-
-
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_menu"
+        app:menu="@menu/iconmenu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
