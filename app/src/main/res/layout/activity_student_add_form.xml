@@ -72,65 +72,36 @@
         android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:textColor="#fff"
-
         android:textColorHint="#fff"
         android:hint="Subject: "
         android:layout_below="@+id/mobileNum"
         android:layout_marginTop="8dp"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fee Paid?"
-        android:textColor="#fff"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/feeStatus"
-        android:layout_below="@+id/subject"/>
-    <RadioGroup
+
+    <EditText
+        android:id="@+id/feePaid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/radioFee"
-        android:orientation="vertical"
-        android:layout_below="@+id/feeStatus">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes"
-            android:id="@+id/yes"
-            android:textColor="#fff"
-            android:textSize="20dp"
-
-            android:onClick="onRadioButtonChecked"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No"
-            android:id="@+id/no"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:onClick="onRadioButtonChecked"
-            />
-
-        
-    </RadioGroup>
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:hint="Fee Status : "
+        android:layout_below="@+id/subject"
+        android:layout_marginTop="8dp"
+        />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/save"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/feeStatus"
+        android:layout_below="@+id/feePaid"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/custom_button"
         android:text="Submit"
-        android:onClick="onSubmitDetails"
         android:textAllCaps="false"
         android:textColor="#fff"
-        android:textSize="16dp" />
+        android:textSize="18dp" />
 
 
 </RelativeLayout>

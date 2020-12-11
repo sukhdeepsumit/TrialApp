@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#20FFFFFF"
     android:backgroundTintMode="src_over"
-    android:background="@drawable/teacherbg"
+    android:background="@drawable/mycoursebg"
     tools:context=".TeacherDatabase.StudentDetails">
 
     <RelativeLayout
@@ -35,7 +35,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="45dp"
             android:background="@drawable/border_outside"
-            android:backgroundTint="#80000000"
+            android:backgroundTint="#8000"
             android:elevation="22dp"
             app:cardCornerRadius="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
