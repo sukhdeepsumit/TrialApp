@@ -135,7 +135,7 @@ public class StudentDetails extends AppCompatActivity {
     private void searchData(String s) {
         FirebaseRecyclerOptions<Model> options =
                 new FirebaseRecyclerOptions.Builder<Model>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child(user).orderByChild("course").startAt(s).endAt(s+"\uf8ff"), Model.class)
+                .setQuery(FirebaseDatabase.getInstance().getReference().child(user).orderByChild("subject").startAt(s).endAt(s+"\uf8ff"), Model.class)
                 .build();
 
         adapter = new MyAdapter(options);
