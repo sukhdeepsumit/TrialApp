@@ -18,6 +18,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.trialapp.R;
+import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 import com.example.trialapp.TeacherActivity.TeacherAccountInfo;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -36,6 +37,7 @@ public class StudentDetails extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     MyAdapter adapter;
+
 
     /* Authenticated User */
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
@@ -70,11 +72,13 @@ public class StudentDetails extends AppCompatActivity {
         nav=findViewById(R.id.navMenu);
         drawerLayout=findViewById(R.id.drawer);
 
-        toggle=new ActionBarDrawerToggle(this,drawerLayout,
+        toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,
                 R.string.open,R.string.close);
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -92,11 +96,21 @@ public class StudentDetails extends AppCompatActivity {
                         startActivity(new Intent(StudentDetails.this, TeacherAccountInfo.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+
+                    case R.id.logOut:
+                        FirebaseAuth.getInstance().signOut();
+                        Toast.makeText(getApplicationContext(), "Logged out", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(StudentDetails.this, LogInTeacherActivity.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
                 }
                 return true;
             }
         });
     }
+
+
 
     @Override
     protected void onStart() {

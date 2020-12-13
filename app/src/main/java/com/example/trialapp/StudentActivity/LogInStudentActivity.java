@@ -75,10 +75,7 @@ public class LogInStudentActivity extends AppCompatActivity {
                     Log.i("FINDCODE", "Message : " + task.getException());
                 }
                 else {
-                    /*Intent intent = new Intent(LogInStudentActivity.this, );
-                    finish();
-                    startActivity(intent);
-                     */
+                    startActivity(new Intent(LogInStudentActivity.this,StudentHomeScreen.class));
                 }
             }
         });

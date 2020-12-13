@@ -11,6 +11,10 @@
         android:icon="@drawable/ic_my_account"
         android:id="@+id/myProfile"
         android:title="MyProfile"/>
+    <item
+        android:icon="@drawable/ic_baseline_logout"
+        android:id="@+id/logOut"
+        android:title="Log Out"/>
 
 
 
