@@ -18,6 +18,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.trialapp.R;
+import com.example.trialapp.TeacherActivity.TeacherAccountInfo;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -88,6 +89,7 @@ public class StudentDetails extends AppCompatActivity {
                     }
                     case R.id.myProfile :
                         Toast.makeText(getApplicationContext(), "My Account opened", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(StudentDetails.this, TeacherAccountInfo.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }

@@ -12,20 +12,24 @@
     android:background="@drawable/mycoursebg"
     tools:context=".TeacherDatabase.StudentDetails">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
-            app:title="Welcome back !"
-            app:titleTextColor="@color/colorAccent"
             android:background="#e55039"
-            />
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:title="Welcome back !"
+            app:titleTextColor="#fff" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -46,26 +50,33 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addSubject"
-            android:layout_below="@+id/recyclerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerView"
+            android:layout_marginBottom="24dp"
             android:layout_toEndOf="@+id/recyclerView"
-            android:elevation="6dp"
-            android:layout_marginTop="8dp"
-            app:fabSize="normal"
-            android:clickable="true"
             android:backgroundTint="#e55039"
-            app:srcCompat="@drawable/ic_add"
-            android:focusable="true" />
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_add" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navMenu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_menu"
         app:menu="@menu/iconmenu" />
+
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

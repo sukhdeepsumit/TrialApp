@@ -37,7 +37,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
 
         goToSignUp = findViewById(R.id.registerLinkTeacher);
 
-        //goToSignUp = findViewById(R.id.registerLinkStudent);
+
         myEmail = findViewById(R.id.username);
         myPassword = findViewById(R.id.pwd);
         login = findViewById(R.id.login);
