@@ -33,11 +33,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="284dp"
-            android:layout_height="483dp"
+            android:layout_width="300dp"
+            android:layout_height="570dp"
             android:layout_below="@+id/toolbar"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="42dp"
             android:background="@drawable/border_outside"
             android:backgroundTint="#8000"
             android:elevation="22dp"
@@ -71,13 +71,11 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_menu"
         app:menu="@menu/iconmenu" />
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

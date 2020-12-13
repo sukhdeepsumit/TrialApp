@@ -3,6 +3,7 @@ package com.example.trialapp.TeacherDatabase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,7 @@ public class StudentAddForm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 InsertData();
+                startActivity(new Intent(StudentAddForm.this, StudentDetails.class));
             }
         });
     }

@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginVertical="4dp"
     app:cardElevation="0dp"
+    android:layout_marginStart="10dp"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="6dp">
 
@@ -176,7 +177,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#FFF"
+        android:background="#FFFFFF"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         />
