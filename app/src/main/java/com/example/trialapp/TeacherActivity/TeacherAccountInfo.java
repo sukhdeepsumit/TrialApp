@@ -111,9 +111,9 @@ public class TeacherAccountInfo extends AppCompatActivity {
                         Map<String, Object> map = new HashMap<>();
                         map.put("firstName", firstName.getText().toString());
                         map.put("lastName", lastName.getText().toString());
-                        map.put("email", email.getText().toString());
-                        map.put("contact", contact.getText().toString());
-                        map.put("subject", subject.getText().toString());
+                        map.put("myEmail", email.getText().toString());
+                        map.put("myContact", contact.getText().toString());
+                        map.put("mySubject", subject.getText().toString());
 
                         ref.updateChildren(map)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
