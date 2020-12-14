@@ -37,7 +37,7 @@ public class TeacherAccountInfo extends AppCompatActivity {
     String firstName, lastName, contact, email, subject;
 
     TextView firstNameText, lastNameText, contactText, emailText, subjectText;
-    Button updateButton, deleteButton;
+    Button updateButton, backButton;
 
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_profile").child(user);
@@ -71,7 +71,6 @@ public class TeacherAccountInfo extends AppCompatActivity {
                 contactText.setText(contact);
                 emailText.setText(email);
                 subjectText.setText(subject);
-
             }
 
             @Override
@@ -132,12 +131,11 @@ public class TeacherAccountInfo extends AppCompatActivity {
                                 });
                     }
                 });
-
             }
         });
         
-        deleteButton = findViewById(R.id.backProfile);
-        deleteButton.setOnClickListener(new View.OnClickListener() {
+        backButton = findViewById(R.id.backProfile);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TeacherAccountInfo.this, StudentDetails.class));
