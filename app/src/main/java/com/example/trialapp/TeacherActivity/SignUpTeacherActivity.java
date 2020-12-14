@@ -16,19 +16,23 @@ import android.widget.Toast;
 
 import com.example.trialapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 public class SignUpTeacherActivity extends AppCompatActivity {
 
-    public static final String NAME_PREF = "ChatPref";
-    public static final String DISPLAY_NAME = "UserName";
-
     Button signUpTeacherBtn;
-    EditText firstName, lastName, myEmail,myContact,myPwd,myCnfPwd;
+    EditText firstName, lastName, myEmail,myContact,myPwd,myCnfPwd, mySubject;
 
     private FirebaseAuth myAuth;
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_profile");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class SignUpTeacherActivity extends AppCompatActivity {
         lastName = findViewById(R.id.lastName);
         myEmail = findViewById(R.id.teacherEmailId);
         myContact = findViewById(R.id.mobileNum);
+        mySubject = findViewById(R.id.subjectTeach);
         myPwd = findViewById(R.id.signUpPassword);
         myCnfPwd = findViewById(R.id.confirmPassword);
 
@@ -118,7 +123,8 @@ public class SignUpTeacherActivity extends AppCompatActivity {
                 } else {
                     //saveUserName();
                     Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
-
+                    //save details method
+                    saveProfileDetails();
                     //move user to login screen on success
                     Intent intent = new Intent(SignUpTeacherActivity.this, LogInTeacherActivity.class);
                     finish();
@@ -126,13 +132,6 @@ public class SignUpTeacherActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    //use shared prefs for usernames
-    private void saveUserName() {
-        String userName = firstName.getText().toString() + " " + lastName.getText().toString();
-        SharedPreferences pref = getSharedPreferences(NAME_PREF, 0);
-        pref.edit().putString(DISPLAY_NAME, userName).apply();
     }
 
     //create alert box for errors
@@ -143,5 +142,23 @@ public class SignUpTeacherActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    private void saveProfileDetails() {
+
+        String fn =  firstName.getText().toString();
+        String ln = lastName.getText().toString();
+        String em =  myEmail.getText().toString();
+        String ct =  myContact.getText().toString();
+        String sub =  mySubject.getText().toString();
+
+        TeacherModel tm = new TeacherModel(fn, ln, em, ct, sub);
+        String userName = Objects.requireNonNull(myAuth.getCurrentUser()).getUid();
+        ref.child(userName).setValue(tm).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(getApplicationContext(), "Record Saved", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

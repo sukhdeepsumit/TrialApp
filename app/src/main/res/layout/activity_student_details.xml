@@ -71,8 +71,8 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navMenu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_menu"
         app:menu="@menu/iconmenu" />

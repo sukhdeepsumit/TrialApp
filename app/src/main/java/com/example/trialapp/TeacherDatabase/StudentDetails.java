@@ -26,6 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
@@ -42,6 +43,7 @@ public class StudentDetails extends AppCompatActivity {
 
     /* Authenticated User */
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_details");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class StudentDetails extends AppCompatActivity {
 
         FirebaseRecyclerOptions<Model> options =
                 new FirebaseRecyclerOptions.Builder<Model>()
-                    .setQuery(FirebaseDatabase.getInstance().getReference().child(user), Model.class)
+                    .setQuery(ref.child(user), Model.class)
                     .build();
 
         adapter =new MyAdapter(options);
@@ -152,7 +154,7 @@ public class StudentDetails extends AppCompatActivity {
     private void searchData(String s) {
         FirebaseRecyclerOptions<Model> options =
                 new FirebaseRecyclerOptions.Builder<Model>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child(user).orderByChild("subject").startAt(s).endAt(s+"\uf8ff"), Model.class)
+                .setQuery(ref.child(user).orderByChild("subject").startAt(s).endAt(s+"\uf8ff"), Model.class)
                 .build();
 
         adapter = new MyAdapter(options);

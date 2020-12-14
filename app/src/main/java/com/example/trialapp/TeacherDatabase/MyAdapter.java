@@ -86,7 +86,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
                         map.put("subject", subject.getText().toString());
                         map.put("feeStatus", feeStatus.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child(new StudentDetails().user)
+                        FirebaseDatabase.getInstance().getReference("Students_details").child(new StudentDetails().user)
                                 .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -110,14 +110,14 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context;
+                //Context context;
                 AlertDialog.Builder builder =new AlertDialog.Builder(holder.firstName.getContext());
                 builder.setTitle("Delete Window");
                 builder.setMessage("Do you want to delete ??");
                 builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child(new StudentDetails().user)
+                        FirebaseDatabase.getInstance().getReference("Students_details").child(new StudentDetails().user)
                                 .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
                     }
                 });

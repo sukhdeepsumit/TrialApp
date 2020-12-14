@@ -13,15 +13,20 @@ import android.widget.Toast;
 import com.example.trialapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class StudentAddForm extends AppCompatActivity {
 
     EditText firstName, lastName, contact, email, subject, feeStatus;
     Button save;
+
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_details");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +60,8 @@ public class StudentAddForm extends AppCompatActivity {
         map.put("subject", subject.getText().toString());
         map.put("feeStatus", feeStatus.getText().toString());
 
-        FirebaseDatabase.getInstance().getReference().child(new StudentDetails().user)
-                .push().setValue(map)
+        ref.child(new StudentDetails().user).push()
+                .setValue(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

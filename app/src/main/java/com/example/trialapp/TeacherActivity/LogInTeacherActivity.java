@@ -98,7 +98,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
     private void showErrorBox() {
         new AlertDialog.Builder(this)
                 .setTitle("Ooooops!!")
-                .setMessage("There was a problem logging in")
+                .setMessage("You entered the wrong email ID or password")
                 .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
