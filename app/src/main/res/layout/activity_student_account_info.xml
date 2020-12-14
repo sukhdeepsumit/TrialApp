@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/teacherprofilebg"
+    android:backgroundTint="#20FFFFFF"
+    android:backgroundTintMode="src_over"
+    tools:context=".StudentActivity.StudentAccountInfo">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e55039"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:title="My Profile!"
+        app:titleTextColor="#fff" />
+
+    <TextView
+        android:id="@+id/myProfileTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/bungee"
+        android:text="My Profile"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="376dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/border_outside"
+        android:backgroundTint="#8000"
+        android:elevation="22dp"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="307dp"
+            android:layout_height="256dp"
+            android:layout_marginStart="20dp"
+            android:background="#00000000"
+            tools:context=".CustomerDetails">
+
+            <TextView
+                android:id="@+id/firstNameProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:text="First Name : "
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lastNameProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Last Name :"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstNameProfile" />
+
+            <TextView
+                android:id="@+id/phoneTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:text="Phone Number :"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameProfile" />
+
+            <TextView
+                android:id="@+id/emailTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Email :"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameProfile" />
+
+
+            <TextView
+                android:id="@+id/firstNameShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/firstNameProfile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lastNameShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/lastNameProfile"
+                app:layout_constraintTop_toBottomOf="@+id/firstNameShow" />
+
+            <TextView
+                android:id="@+id/EmailTextShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/phoneTextViewProfile"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameShow" />
+
+            <TextView
+                android:id="@+id/PhoneTextShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="118dp"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/emailTextViewProfile"
+                app:layout_constraintTop_toBottomOf="@+id/EmailTextShow" />
+
+
+            <Button
+                android:id="@+id/updateProfile"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginBottom="56dp"
+                android:background="@drawable/custom_button"
+                android:text="Update"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/backProfile" />
+
+            <Button
+                android:id="@+id/backProfile"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="56dp"
+                android:background="@drawable/custom_button"
+                android:text="Back"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

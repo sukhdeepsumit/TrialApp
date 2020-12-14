@@ -6,27 +6,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.trialapp.R;
 import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 import com.example.trialapp.TeacherActivity.TeacherAccountInfo;
+import com.example.trialapp.TeacherAddForm;
+import com.example.trialapp.TeacherDatabase.Model;
+import com.example.trialapp.TeacherDatabase.StudentAddForm;
 import com.example.trialapp.TeacherDatabase.StudentDetails;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class StudentHomeScreen extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle mToggle;
+    RecyclerView recyclerView;
+    FloatingActionButton add;
 
-
+    public String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_details");
+    MySAdapter mySAdapter;
 
 
 
@@ -34,6 +50,15 @@ public class StudentHomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home_screen);
+        add=findViewById(R.id.addSubject);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(StudentHomeScreen.this, TeacherAddForm.class));
+            }
+        });
+
+
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,7 +81,7 @@ public class StudentHomeScreen extends AppCompatActivity {
                     }
                     case R.id.myProfile :
                         Toast.makeText(getApplicationContext(), "My Account opened", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(StudentDetails.this, TeacherAccountInfo.class));
+                        startActivity(new Intent(StudentHomeScreen.this, StudentAccountInfo.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -73,7 +98,30 @@ public class StudentHomeScreen extends AppCompatActivity {
         });
 
 
+        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        FirebaseRecyclerOptions<SModel> options =
+                new FirebaseRecyclerOptions.Builder<SModel>()
+                        .setQuery(ref.child(user),SModel.class )
+                        .build();
+        mySAdapter=new MySAdapter(options);
+        recyclerView.setAdapter(mySAdapter);
+
+
+
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mySAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mySAdapter.stopListening();
     }
 
 

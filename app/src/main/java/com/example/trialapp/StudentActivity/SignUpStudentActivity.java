@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
@@ -27,16 +29,19 @@ public class SignUpStudentActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText fName, lName, mEmail,mContact,mPwd,mCnfPwd;
     ProgressBar progressBar;
+    DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Student's Profile");
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
-        Toast.makeText(this, "Already In", Toast.LENGTH_SHORT).show();
 
-    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        //updateUI(currentUser);
+//        Toast.makeText(this, "Already In", Toast.LENGTH_SHORT).show();
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +119,7 @@ public class SignUpStudentActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.i("TAG", "createUserWithEmail:success");
                                         Toast.makeText(SignUpStudentActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
+                                        saveStudentProfileDetails();
                                         startActivity(new Intent(SignUpStudentActivity.this, LogInStudentActivity.class));
 
 
@@ -129,4 +135,24 @@ public class SignUpStudentActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void saveStudentProfileDetails()
+    {
+        String fn=fName.getText().toString();
+        String ln = lName.getText().toString();
+        String em =  mEmail.getText().toString();
+        String ct =  mContact.getText().toString();
+
+        StudentModel sm= new StudentModel(fn,ln,em,ct);
+        String user= Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        myRef.child(user).setValue(sm).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(getApplicationContext(), "Record Saved", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+
 }

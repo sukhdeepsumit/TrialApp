@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherActivity.TeacherAccountInfo"></activity>
+        <activity android:name=".StudentActivity.StudentAccountInfo"></activity>
+        <activity android:name=".TeacherAddForm" />
+        <activity android:name=".TeacherActivity.TeacherAccountInfo" />
         <activity android:name=".StudentActivity.StudentHomeScreen" />
         <activity android:name=".TeacherDatabase.StudentAddForm" />
         <activity android:name=".TeacherDatabase.StudentDetails" />
