@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.trialapp.R;
+import com.example.trialapp.StudentActivity.StudentHomeScreen;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,7 +47,7 @@ public class StudentAddForm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 InsertData();
-                startActivity(new Intent(StudentAddForm.this, StudentDetails.class));
+                startActivity(new Intent(StudentAddForm.this, StudentHomeScreen.class));
             }
         });
     }
