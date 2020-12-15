@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -11,6 +12,7 @@ import com.example.trialapp.StudentActivity.LogInStudentActivity;
 import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 
 public class MainActivity extends AppCompatActivity {
+
 
     ImageView student, teacher;
 
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LogInTeacherActivity.class));
             }
         });
+
+
     }
 
     @Override

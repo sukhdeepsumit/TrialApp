@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudentActivity.StudentAccountInfo"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".StudentActivity.StudentAccountInfo" />
         <activity android:name=".TeacherAddForm" />
         <activity android:name=".TeacherActivity.TeacherAccountInfo" />
         <activity android:name=".StudentActivity.StudentHomeScreen" />
@@ -21,7 +22,7 @@
         <activity android:name=".TeacherActivity.SignUpTeacherActivity" />
         <activity android:name=".StudentActivity.SignUpStudentActivity" />
         <activity android:name=".TeacherActivity.LogInTeacherActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
