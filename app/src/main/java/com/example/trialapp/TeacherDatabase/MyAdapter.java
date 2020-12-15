@@ -41,6 +41,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
      *
      * @param options
      */
+    //Adapter
     public MyAdapter(@NonNull FirebaseRecyclerOptions<Model> options) {
         super(options);
     }
