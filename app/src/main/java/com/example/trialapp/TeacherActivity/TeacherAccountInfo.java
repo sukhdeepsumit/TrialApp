@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+//class about teacher
 public class TeacherAccountInfo extends AppCompatActivity {
 
     String firstName, lastName, contact, email, subject;
