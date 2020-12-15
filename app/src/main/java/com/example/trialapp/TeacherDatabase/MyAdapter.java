@@ -1,5 +1,6 @@
 package com.example.trialapp.TeacherDatabase;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -44,6 +45,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
         super(options);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull final MyViewHolder holder, final int position, @NonNull final Model model) {
         holder.firstName.setText(model.getFirstName());
@@ -53,7 +55,13 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
         holder.email.setText(model.getEmail());
         holder.feeStatus.setText(model.getFeeStatus());
 
+        int today = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        if(today == 1) {
+            holder.feeStatus.setText("Not Paid");
+        }
+
         holder.update.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
