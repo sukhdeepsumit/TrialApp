@@ -66,11 +66,22 @@
         android:layout_below="@+id/teacherEmailId"
         android:layout_marginTop="8dp"
         />
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColorHint="#fff"
+        android:hint="Subject: "
+        android:textColor="#fff"
+        android:layout_below="@+id/mobileNum"
+        android:layout_marginTop="8dp"
+        />
     <Button
         android:id="@+id/save"
         android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mobileNum"
+        android:layout_below="@+id/subject"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
         android:background="@drawable/custom_button"

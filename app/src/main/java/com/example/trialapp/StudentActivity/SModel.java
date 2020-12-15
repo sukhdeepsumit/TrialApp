@@ -1,17 +1,26 @@
 package com.example.trialapp.StudentActivity;
 
 public class SModel {
-    String firstName, lastName, email, contact;
+    String firstName, lastName, email, contact, subject;
     public SModel()
     {
 
     }
 
-    public SModel(String firstName, String lastName, String email, String contact) {
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public SModel(String firstName, String lastName, String email, String contact, String subject) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.contact = contact;
+        this.subject= subject;
     }
 
     public String getFirstName() {

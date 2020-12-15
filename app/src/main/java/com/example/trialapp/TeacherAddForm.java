@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TeacherAddForm extends AppCompatActivity {
-    EditText firstName, lastName, contact, email;
+    EditText firstName, lastName, contact, email, subject;
     Button save;
 
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_details");
@@ -35,6 +35,8 @@ public class TeacherAddForm extends AppCompatActivity {
         lastName = findViewById(R.id.lastName);
         email = findViewById(R.id.teacherEmailId);
         contact = findViewById(R.id.mobileNum);
+        subject=findViewById(R.id.subject);
+
 
 
         save = findViewById(R.id.save);
@@ -53,6 +55,7 @@ public class TeacherAddForm extends AppCompatActivity {
         map.put("lastName", lastName.getText().toString());
         map.put("email", email.getText().toString());
         map.put("contact", contact.getText().toString());
+        map.put("subject", subject.getText().toString());
 
 
         ref.child(new StudentHomeScreen().user).push()
@@ -64,6 +67,7 @@ public class TeacherAddForm extends AppCompatActivity {
                         lastName.setText("");
                         contact.setText("");
                         email.setText("");
+                        subject.setText("");
 
                         Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_SHORT).show();
                     }

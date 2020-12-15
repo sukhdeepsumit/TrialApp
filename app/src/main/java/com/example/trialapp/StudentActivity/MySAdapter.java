@@ -45,7 +45,7 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
     protected void onBindViewHolder(@NonNull final myViewHolder holder, final int position, @NonNull final SModel model) {
         holder.firstName.setText(model.getFirstName());
         holder.lastName.setText(model.getLastName());
-
+        holder.subject.setText(model.getSubject());
         holder.contact.setText(model.getContact());
         holder.email.setText(model.getEmail());
 
@@ -63,6 +63,7 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
                 final EditText lastName = myView.findViewById(R.id.updateLastName);
                 final EditText email = myView.findViewById(R.id.updateEmail);
                 final EditText contact = myView.findViewById(R.id.updateContact);
+                final EditText subject = myView.findViewById(R.id.updateSubject);
 
                 Button submit = myView.findViewById(R.id.submit);
 
@@ -70,6 +71,7 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
                 lastName.setText(model.getLastName());
                 email.setText(model.getEmail());
                 contact.setText(model.getContact());
+                subject.setText(model.getSubject());
 
 
                 dialogPlus.show();
@@ -82,6 +84,8 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
                         map.put("lastName", lastName.getText().toString());
                         map.put("email", email.getText().toString());
                         map.put("contact", contact.getText().toString());
+                        map.put("subject", subject.getText().toString());
+
 
 
                         FirebaseDatabase.getInstance().getReference("Teachers_details").child(new StudentHomeScreen().user)
@@ -140,7 +144,7 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
 
     static class myViewHolder extends RecyclerView.ViewHolder
     {
-        TextView firstName, lastName, email, contact;
+        TextView firstName, lastName, email, contact, subject;
         Button update, delete;
 
         public myViewHolder(@NonNull View itemView) {
@@ -151,6 +155,7 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
             contact = itemView.findViewById(R.id.PhoneTextShow);
 
             email = itemView.findViewById(R.id.EmailTextShow);
+            subject=itemView.findViewById(R.id.subjectShow);
 
             update = itemView.findViewById(R.id.update);
             delete = itemView.findViewById(R.id.delete);
