@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -66,11 +67,11 @@ public class SignUpStudentActivity extends AppCompatActivity {
 //        }
 
 
-
-
         signUpStudentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                hideKeybaord(v);
 
                 final  String myEmail=mEmail.getText().toString().trim();
                 final String mobNum=mContact.getText().toString().trim();
@@ -134,6 +135,11 @@ public class SignUpStudentActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void hideKeybaord(View v) {
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
     }
 
     private void saveStudentProfileDetails()

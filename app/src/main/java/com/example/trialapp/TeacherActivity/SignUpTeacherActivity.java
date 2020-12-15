@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -54,9 +55,15 @@ public class SignUpTeacherActivity extends AppCompatActivity {
         signUpTeacherBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                hideKeybaord(view);
                 registerUser();
             }
         });
+    }
+
+    private void hideKeybaord(View v) {
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
     }
 
     private void registerUser() {
