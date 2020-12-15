@@ -28,21 +28,23 @@
             app:layout_constraintVertical_bias="0.0"
             app:title="Welcome back !"
             app:titleTextColor="#fff" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="364dp"
-            android:layout_height="400dp"
+            android:layout_height="450dp"
             android:layout_centerHorizontal="true"
             android:backgroundTint="#80000000"
             android:elevation="22dp"
             app:cardCornerRadius="40dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
 
             android:background="@drawable/border_outside"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addSubject"
             android:layout_width="wrap_content"
