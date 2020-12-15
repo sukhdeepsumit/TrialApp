@@ -111,6 +111,11 @@ public class LogInTeacherActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(LogInTeacherActivity.this, MainActivity.class));
+    }
+
     private void showErrorBox() {
         new AlertDialog.Builder(this)
                 .setTitle("Ooooops!!")

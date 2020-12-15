@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.trialapp.MainActivity;
 import com.example.trialapp.R;
+import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -97,6 +98,11 @@ public class LogInStudentActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(LogInStudentActivity.this, MainActivity.class));
     }
 
     private void showErrorBox() {
