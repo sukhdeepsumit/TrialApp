@@ -3,6 +3,7 @@ package com.example.trialapp.TeacherDatabase;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trialapp.R;
@@ -23,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.time.YearMonth;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -50,6 +54,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
         holder.feeStatus.setText(model.getFeeStatus());
 
         holder.update.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 final DialogPlus dialogPlus =DialogPlus.newDialog(holder.firstName.getContext())
@@ -125,7 +130,6 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {  }
                 });
-
                 builder.show();
             }
         });

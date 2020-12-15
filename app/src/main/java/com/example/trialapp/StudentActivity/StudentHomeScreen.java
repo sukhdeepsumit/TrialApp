@@ -9,7 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -70,6 +72,7 @@ public class StudentHomeScreen extends AppCompatActivity {
         mToggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
@@ -88,6 +91,12 @@ public class StudentHomeScreen extends AppCompatActivity {
                     case R.id.logOut:
                         FirebaseAuth.getInstance().signOut();
                         Toast.makeText(getApplicationContext(), "Logged out", Toast.LENGTH_SHORT).show();
+
+                        @SuppressLint("CommitPrefEdits")
+                        SharedPreferences.Editor editor = LogInStudentActivity.sharedPreferences.edit();
+                        editor.putInt("key", 0);
+                        editor.apply();
+
                         startActivity(new Intent(StudentHomeScreen.this, LogInStudentActivity.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;

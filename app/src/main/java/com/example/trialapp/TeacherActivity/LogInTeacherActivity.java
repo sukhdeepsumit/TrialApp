@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.trialapp.MainActivity;
 import com.example.trialapp.R;
 import com.example.trialapp.TeacherDatabase.StudentDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +33,9 @@ public class LogInTeacherActivity extends AppCompatActivity {
 
     private FirebaseAuth myAuth;
 
+    public static SharedPreferences sharedPreferences;
+    int AUTO_SAVE;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +51,19 @@ public class LogInTeacherActivity extends AppCompatActivity {
         myAuth = FirebaseAuth.getInstance();
         progressBar=findViewById(R.id.progressBarForTeacher);
 
+        sharedPreferences = getSharedPreferences("autoLogin", Context.MODE_PRIVATE);
+        int pref = sharedPreferences.getInt("key", 0);
+
+        if(pref > 0) {
+            startActivity(new Intent(getApplicationContext(), StudentDetails.class));
+        }
+
         goToSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LogInTeacherActivity.this,SignUpTeacherActivity.class));
             }
         });
-
-
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +96,11 @@ public class LogInTeacherActivity extends AppCompatActivity {
                     Log.i("FINDCODE", "Message : " + task.getException());
                 }
                 else {
+                    AUTO_SAVE = 1;
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("key", AUTO_SAVE);
+                    editor.apply();
+
                     Intent intent = new Intent(LogInTeacherActivity.this, StudentDetails.class);
                     finish();
                     startActivity(intent);

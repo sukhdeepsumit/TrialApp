@@ -1,15 +1,19 @@
 package com.example.trialapp.TeacherDatabase;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +22,9 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.trialapp.MainActivity;
 import com.example.trialapp.R;
+import com.example.trialapp.StudentActivity.LogInStudentActivity;
 import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 import com.example.trialapp.TeacherActivity.TeacherAccountInfo;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -81,9 +87,8 @@ public class StudentDetails extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-
-
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -103,17 +108,20 @@ public class StudentDetails extends AppCompatActivity {
                     case R.id.logOut:
                         FirebaseAuth.getInstance().signOut();
                         Toast.makeText(getApplicationContext(), "Logged out", Toast.LENGTH_SHORT).show();
+
+                        @SuppressLint("CommitPrefEdits")
+                        SharedPreferences.Editor editor = LogInTeacherActivity.sharedPreferences.edit();
+                        editor.putInt("key", 0);
+                        editor.apply();
+
                         startActivity(new Intent(StudentDetails.this, LogInTeacherActivity.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
-
                 }
                 return true;
             }
         });
     }
-
-
 
     @Override
     protected void onStart() {
