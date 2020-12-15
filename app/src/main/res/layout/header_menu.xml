@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:textColor="#000"
         android:textSize="25dp"
-        android:text="Our first App"
+        android:text="Hey there !"
         android:fontFamily="@font/bungee"
         />
     <TextView
@@ -21,7 +21,7 @@
         android:fontFamily="cursive"
         android:textColor="#000"
         android:textSize="20dp"
-        android:text="Bakchodi is better than regret."
+        android:text="Let's teach and learn."
         />
 
 
