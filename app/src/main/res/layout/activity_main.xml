@@ -8,6 +8,23 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+
+        android:text="Tuition Records"
+        android:textColor="#fff"
+        android:textSize="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/roleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/roleView"
         android:layout_width="210dp"
@@ -22,13 +39,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="85dp"
         app:layout_constraintVertical_bias="0.076">
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
+
             android:paddingStart="10dp"
             android:text="Choose Your Role"
             android:textColor="#FFF"
@@ -45,30 +64,31 @@
         android:elevation="12dp"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="165dp"
             android:layout_marginStart="95dp"
+            android:layout_marginTop="165dp"
             android:text="Teacher"
             android:textColor="#FFF"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="380dp"
             android:text="Student"
             android:textColor="#FFF"
-            android:textSize="20sp"
-            android:layout_marginTop="380dp"
-            android:layout_marginStart="100dp"
-            />
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
