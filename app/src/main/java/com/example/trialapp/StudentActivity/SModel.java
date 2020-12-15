@@ -7,14 +7,6 @@ public class SModel {
 
     }
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
     public SModel(String firstName, String lastName, String email, String contact, String subject) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -54,4 +46,13 @@ public class SModel {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
 }

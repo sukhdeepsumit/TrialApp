@@ -46,8 +46,6 @@ public class StudentHomeScreen extends AppCompatActivity {
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_details");
     MySAdapter mySAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +57,6 @@ public class StudentHomeScreen extends AppCompatActivity {
                 startActivity(new Intent(StudentHomeScreen.this, TeacherAddForm.class));
             }
         });
-
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -101,11 +98,9 @@ public class StudentHomeScreen extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
-
                 return true;
             }
         });
-
 
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -137,6 +132,4 @@ public class StudentHomeScreen extends AppCompatActivity {
         super.onStop();
         mySAdapter.stopListening();
     }
-
-
 }
