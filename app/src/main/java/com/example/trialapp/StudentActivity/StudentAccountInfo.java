@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,8 +40,8 @@ public class StudentAccountInfo extends AppCompatActivity {
     TextView firstNameText, lastNameText, emailText, contactText;
     Button update, back;
 
-    String user= Objects.requireNonNull(FirebaseAuth.getInstance()).getCurrentUser().getUid();
-    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student's Profile").child(user);
+    String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Student's Profile").child(user);;
 
     StudentModel model;
 
@@ -48,6 +49,7 @@ public class StudentAccountInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_account_info);
+
         firstNameText=findViewById(R.id.firstNameShow);
         lastNameText=findViewById(R.id.lastNameShow);
         emailText=findViewById(R.id.EmailTextShow);

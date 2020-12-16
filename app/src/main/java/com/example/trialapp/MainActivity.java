@@ -12,15 +12,12 @@ import com.example.trialapp.StudentActivity.LogInStudentActivity;
 import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-
     ImageView student, teacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         student = findViewById(R.id.student);
         teacher = findViewById(R.id.teacher);
@@ -38,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LogInTeacherActivity.class));
             }
         });
-
-
     }
 
     @Override

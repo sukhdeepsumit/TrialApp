@@ -49,13 +49,13 @@ public class StudentDetails extends AppCompatActivity {
 
     /* Authenticated User */
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_details");
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_details");;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_student_details);
+
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

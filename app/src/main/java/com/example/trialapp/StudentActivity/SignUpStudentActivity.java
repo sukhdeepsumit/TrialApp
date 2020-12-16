@@ -32,17 +32,16 @@ public class SignUpStudentActivity extends AppCompatActivity {
     ProgressBar progressBar;
     DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Student's Profile");
 
+    /*
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+        Toast.makeText(this, "Already In", Toast.LENGTH_SHORT).show();
 
-
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        //updateUI(currentUser);
-//        Toast.makeText(this, "Already In", Toast.LENGTH_SHORT).show();
-//
-//    }
+    }
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +157,4 @@ public class SignUpStudentActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 }

@@ -47,7 +47,7 @@ public class StudentAddForm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 InsertData();
-                startActivity(new Intent(StudentAddForm.this, StudentHomeScreen.class));
+                startActivity(new Intent(StudentAddForm.this, StudentDetails.class));
             }
         });
     }
