@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpStudentActivity extends AppCompatActivity {
     Button signUpStudentBtn;
@@ -85,8 +87,14 @@ public class SignUpStudentActivity extends AppCompatActivity {
 
                 else if(TextUtils.isEmpty(mobNum))
                 {
-                    mContact.setError("Enter email !");
+                    mContact.setError("Enter contact !");
                     mContact.requestFocus();
+                }
+                else if(!checkContact(mobNum))
+                {
+                    mContact.setError("Your contact is invalid");
+                    mContact.requestFocus();
+
                 }
 
                 else if(TextUtils.isEmpty(password) )
@@ -134,6 +142,15 @@ public class SignUpStudentActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private boolean checkContact(String contact)
+    {
+        Pattern p = Pattern.compile("^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$");
+
+        Matcher m = p.matcher(contact);
+        return (m.find() && m.group().equals(contact));
+
+
     }
 
     private void hideKeybaord(View v) {

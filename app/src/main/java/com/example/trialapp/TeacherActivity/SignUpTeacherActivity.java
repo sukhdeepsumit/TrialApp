@@ -26,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpTeacherActivity extends AppCompatActivity {
 
@@ -72,6 +74,7 @@ public class SignUpTeacherActivity extends AppCompatActivity {
 
         String email = myEmail.getText().toString();
         String password = myPwd.getText().toString();
+        String contact=myContact.getText().toString();
 
         boolean cancel =false;
         View focusView = null;
@@ -94,6 +97,13 @@ public class SignUpTeacherActivity extends AppCompatActivity {
             focusView = myEmail;
             cancel = true;
         }
+        if(!checkContact(contact))
+        {
+            myContact.setError("Your contact is invalid");
+            focusView=myContact;
+            cancel=true;
+
+        }
 
         if(cancel) {
             focusView.requestFocus();
@@ -112,6 +122,15 @@ public class SignUpTeacherActivity extends AppCompatActivity {
     private boolean checkPassword(String password) {
         String cnfPassword = myCnfPwd.getText().toString();
         return cnfPassword.equals(password) && password.length() > 6;
+    }
+    private boolean checkContact(String contact)
+    {
+        Pattern p = Pattern.compile("^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$");
+
+        Matcher m = p.matcher(contact);
+        return (m.find() && m.group().equals(contact));
+
+
     }
 
     private void createUser() {

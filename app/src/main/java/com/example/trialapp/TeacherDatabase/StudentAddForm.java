@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StudentAddForm extends AppCompatActivity {
 
@@ -46,13 +49,66 @@ public class StudentAddForm extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                InsertData();
-                startActivity(new Intent(StudentAddForm.this, StudentDetails.class));
+                registerUser();
+
             }
         });
     }
+    private void registerUser() {
+        email.setError(null);
+
+
+        String myEmail = email.getText().toString();
+
+        String myContact=contact.getText().toString();
+
+        boolean cancel =false;
+        View focusView = null;
+
+
+        //email validation
+        if(TextUtils.isEmpty(myEmail)) {
+            email.setError("Your Email is Invalid");
+            focusView = email;
+            cancel = true;
+        }
+        else if(!checkEmail(myEmail)) {
+            email.setError("Your Email is Invalid");
+            focusView = email;
+            cancel = true;
+        }
+        if(!checkContact(myContact))
+        {
+            contact.setError("Your contact is invalid");
+            focusView=contact;
+            cancel=true;
+
+        }
+
+        if(cancel) {
+            focusView.requestFocus();
+        }
+        else {
+            InsertData();
+            startActivity(new Intent(StudentAddForm.this, StudentDetails.class));
+        }
+    }
+    private boolean checkEmail(String email) {
+        return email.contains("@");
+    }
+    private boolean checkContact(String contact)
+    {
+        Pattern p = Pattern.compile("^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$");
+
+        Matcher m = p.matcher(contact);
+        return (m.find() && m.group().equals(contact));
+
+
+    }
+
 
     private void InsertData() {
+
         Map<String, Object> map = new HashMap<>();
         map.put("firstName", firstName.getText().toString());
         map.put("lastName", lastName.getText().toString());
