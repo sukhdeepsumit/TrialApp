@@ -72,6 +72,15 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
       />
+    <ProgressBar
+        android:id="@+id/progressBarForStudent"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerLinkStudent"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        />
 
 
 </RelativeLayout>
