@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LogInTeacherActivity extends AppCompatActivity {
 
-    TextView goToSignUp;
+    TextView goToSignUp,forgotPwd;
     EditText myEmail, myPassword;
     Button login;
     ProgressBar progressBar;
@@ -43,6 +43,7 @@ public class LogInTeacherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in_teacher);
 
         goToSignUp = findViewById(R.id.registerLinkTeacher);
+        forgotPwd=findViewById(R.id.forgotPwd);
 
 
         myEmail = findViewById(R.id.username);
@@ -73,6 +74,13 @@ public class LogInTeacherActivity extends AppCompatActivity {
                 loginUserWithFirebase();
             }
         });
+        forgotPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LogInTeacherActivity.this,TeacherForgotPwd.class));
+            }
+        });
+
     }
 
     private void loginUserWithFirebase() {

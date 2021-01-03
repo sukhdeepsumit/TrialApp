@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.trialapp.MainActivity;
 import com.example.trialapp.R;
 import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
+import com.example.trialapp.TeacherActivity.TeacherForgotPwd;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,7 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LogInStudentActivity extends AppCompatActivity {
 
-    TextView goToSignUp;
+    TextView goToSignUp,forgotPwd;
     EditText myEmail, myPassword;
     Button login;
     ProgressBar progressBar;
@@ -47,6 +48,7 @@ public class LogInStudentActivity extends AppCompatActivity {
         myPassword = findViewById(R.id.pwd);
         login = findViewById(R.id.login);
         progressBar=findViewById(R.id.progressBarForStudent);
+        forgotPwd=findViewById(R.id.forgotPwd);
 
         myAuth = FirebaseAuth.getInstance();
 
@@ -71,6 +73,15 @@ public class LogInStudentActivity extends AppCompatActivity {
                 loginUserWithFirebase();
             }
         });
+        forgotPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LogInStudentActivity.this,TeacherForgotPwd.class));
+            }
+        });
+
+
+
     }
 
     private void hideKeybaord(View v) {
