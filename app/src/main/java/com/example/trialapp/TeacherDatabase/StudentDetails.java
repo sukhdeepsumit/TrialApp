@@ -43,7 +43,7 @@ public class StudentDetails extends AppCompatActivity {
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
-    MyAdapter adapter;
+   // MyAdapter adapter;
 
 
     /* Authenticated User */
@@ -58,13 +58,13 @@ public class StudentDetails extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<Model> options =
-                new FirebaseRecyclerOptions.Builder<Model>()
-                    .setQuery(ref.child(user), Model.class)
-                    .build();
+//        FirebaseRecyclerOptions<Model> options =
+//                new FirebaseRecyclerOptions.Builder<Model>()
+//                    .setQuery(ref.child(user), Model.class)
+//                    .build();
 
-        adapter =new MyAdapter(options);
-        recyclerView.setAdapter(adapter);
+        //adapter =new MyAdapter(options);
+       // recyclerView.setAdapter(adapter);
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -125,13 +125,13 @@ public class StudentDetails extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+       // adapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
+      //  adapter.stopListening();
     }
 
     @Override
@@ -159,13 +159,13 @@ public class StudentDetails extends AppCompatActivity {
     }
 
     private void searchData(String s) {
-        FirebaseRecyclerOptions<Model> options =
-                new FirebaseRecyclerOptions.Builder<Model>()
-                .setQuery(ref.child(user).orderByChild("subject").startAt(s).endAt(s+"\uf8ff"), Model.class)
-                .build();
+//        FirebaseRecyclerOptions<Model> options =
+//                new FirebaseRecyclerOptions.Builder<Model>()
+//                .setQuery(ref.child(user).orderByChild("subject").startAt(s).endAt(s+"\uf8ff"), Model.class)
+//                .build();
 
-        adapter = new MyAdapter(options);
-        adapter.startListening();
-        recyclerView.setAdapter(adapter);
+       // adapter = new MyAdapter(options);
+        //adapter.startListening();
+        //recyclerView.setAdapter(adapter);
     }
 }

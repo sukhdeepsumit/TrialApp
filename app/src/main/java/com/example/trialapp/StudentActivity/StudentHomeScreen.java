@@ -37,7 +37,7 @@ public class StudentHomeScreen extends AppCompatActivity {
 
     public String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_details");
-    MySAdapter mySAdapter;
+   // MySAdapter mySAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,12 +98,12 @@ public class StudentHomeScreen extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<SModel> options =
-                new FirebaseRecyclerOptions.Builder<SModel>()
-                        .setQuery(ref.child(user),SModel.class )
-                        .build();
-        mySAdapter=new MySAdapter(options);
-        recyclerView.setAdapter(mySAdapter);
+//        FirebaseRecyclerOptions<SModel> options =
+//                new FirebaseRecyclerOptions.Builder<SModel>()
+//                        .setQuery(ref.child(user),SModel.class )
+//                        .build();
+//        mySAdapter=new MySAdapter(options);
+//        recyclerView.setAdapter(mySAdapter);
     }
 
     @Override
@@ -117,12 +117,12 @@ public class StudentHomeScreen extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mySAdapter.startListening();
+        //mySAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mySAdapter.stopListening();
+        //mySAdapter.stopListening();
     }
 }
