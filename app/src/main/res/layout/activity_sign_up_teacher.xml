@@ -89,6 +89,18 @@
         />
 
     <EditText
+        android:id="@+id/standardTeach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textColorHint="#FFF"
+        android:hint="Standard :"
+        android:textColor="#FFF"
+        android:layout_below="@+id/subjectTeach"
+        android:layout_marginTop="8dp"
+        />
+
+    <EditText
         android:id="@+id/signUpPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -96,7 +108,7 @@
         android:textColor="#fff"
         android:textColorHint="#fff"
         android:hint="Password: "
-        android:layout_below="@+id/subjectTeach"
+        android:layout_below="@+id/standardTeach"
         android:layout_marginTop="8dp"
         />
 

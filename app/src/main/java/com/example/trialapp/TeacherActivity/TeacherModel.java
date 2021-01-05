@@ -2,17 +2,18 @@ package com.example.trialapp.TeacherActivity;
 
 public class TeacherModel {
 
-    String firstName, lastName,  myEmail, myContact, mySubject;
+    String firstName, lastName,  myEmail, myContact, mySubject, myStandard;
 
     public TeacherModel() {
     }
 
-    public TeacherModel(String firstName, String lastName, String myEmail, String myContact, String mySubject) {
+    public TeacherModel(String firstName, String lastName, String myEmail, String myContact, String mySubject, String myStandard) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.myEmail = myEmail;
         this.myContact = myContact;
         this.mySubject = mySubject;
+        this.myStandard = myStandard;
     }
 
     public String getFirstName() {
@@ -53,5 +54,13 @@ public class TeacherModel {
 
     public void setMySubject(String mySubject) {
         this.mySubject = mySubject;
+    }
+
+    public String getMyStandard() {
+        return myStandard;
+    }
+
+    public void setMyStandard(String myStandard) {
+        this.myStandard = myStandard;
     }
 }

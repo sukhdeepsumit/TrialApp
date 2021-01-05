@@ -42,7 +42,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="376dp"
-        android:layout_height="240dp"
+        android:layout_height="280dp"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
@@ -120,6 +120,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/emailTextViewProfile" />
 
             <TextView
+                android:id="@+id/standardProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Standard :"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subjectProfile" />
+
+            <TextView
                 android:id="@+id/firstNameShow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -174,12 +185,23 @@
                 app:layout_constraintStart_toEndOf="@+id/subjectProfile"
                 app:layout_constraintTop_toBottomOf="@+id/PhoneTextShow" />
 
+            <TextView
+                android:id="@+id/standardShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/standardProfile"
+                app:layout_constraintTop_toBottomOf="@+id/subjectShow" />
+
             <Button
                 android:id="@+id/updateProfile"
                 android:layout_width="72dp"
                 android:layout_height="32dp"
-                android:layout_marginEnd="56dp"
-                android:layout_marginBottom="56dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="32dp"
                 android:background="@drawable/custom_button"
                 android:text="Update"
                 android:textColor="@color/white"
@@ -190,13 +212,14 @@
                 android:id="@+id/backProfile"
                 android:layout_width="72dp"
                 android:layout_height="32dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="56dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="32dp"
                 android:background="@drawable/custom_button"
                 android:text="Back"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

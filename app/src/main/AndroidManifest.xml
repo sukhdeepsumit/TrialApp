@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.trialapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_round"
@@ -11,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherActivity.TeacherForgotPwd"></activity>
+        <activity android:name=".AllTeacherRecord.AllTeacherRecords" />
+        <activity android:name=".TeacherActivity.TeacherForgotPwd" />
         <activity android:name=".MainActivity" />
         <activity android:name=".StudentActivity.StudentAccountInfo" />
         <activity android:name=".TeacherAddForm" />
         <activity android:name=".TeacherActivity.TeacherAccountInfo" />
         <activity android:name=".StudentActivity.StudentHomeScreen" />
-        <activity android:name=".TeacherDatabase.StudentAddForm" />
         <activity android:name=".TeacherDatabase.StudentDetails" />
         <activity android:name=".StudentActivity.LogInStudentActivity" />
         <activity android:name=".TeacherActivity.SignUpTeacherActivity" />
@@ -35,5 +33,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

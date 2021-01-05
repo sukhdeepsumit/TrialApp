@@ -40,7 +40,6 @@ import java.util.Objects;
 public class StudentDetails extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    FloatingActionButton add;
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
@@ -66,14 +65,6 @@ public class StudentDetails extends AppCompatActivity {
 
         adapter =new MyAdapter(options);
         recyclerView.setAdapter(adapter);
-
-        add=findViewById(R.id.addSubject);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StudentDetails.this, StudentAddForm.class));
-            }
-        });
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

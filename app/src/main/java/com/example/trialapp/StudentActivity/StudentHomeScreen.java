@@ -13,19 +13,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.trialapp.AllTeacherRecord.AllTeacherRecords;
 import com.example.trialapp.R;
-import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
-import com.example.trialapp.TeacherActivity.TeacherAccountInfo;
 import com.example.trialapp.TeacherAddForm;
-import com.example.trialapp.TeacherDatabase.Model;
-import com.example.trialapp.TeacherDatabase.StudentAddForm;
-import com.example.trialapp.TeacherDatabase.StudentDetails;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -54,7 +48,7 @@ public class StudentHomeScreen extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(StudentHomeScreen.this, TeacherAddForm.class));
+                startActivity(new Intent(StudentHomeScreen.this, AllTeacherRecords.class));
             }
         });
 

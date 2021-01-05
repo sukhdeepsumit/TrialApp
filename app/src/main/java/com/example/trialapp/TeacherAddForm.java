@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.trialapp.StudentActivity.StudentHomeScreen;
-import com.example.trialapp.TeacherDatabase.StudentAddForm;
-import com.example.trialapp.TeacherDatabase.StudentDetails;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;

@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 public class SignUpTeacherActivity extends AppCompatActivity {
 
     Button signUpTeacherBtn;
-    EditText firstName, lastName, myEmail,myContact,myPwd,myCnfPwd, mySubject;
+    EditText firstName, lastName, myEmail,myContact,myPwd,myCnfPwd, mySubject, myStandard;
 
     private FirebaseAuth myAuth;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Teachers_profile");
@@ -47,6 +47,7 @@ public class SignUpTeacherActivity extends AppCompatActivity {
         myEmail = findViewById(R.id.teacherEmailId);
         myContact = findViewById(R.id.mobileNum);
         mySubject = findViewById(R.id.subjectTeach);
+        myStandard = findViewById(R.id.standardTeach);
         myPwd = findViewById(R.id.signUpPassword);
         myCnfPwd = findViewById(R.id.confirmPassword);
 
@@ -88,7 +89,7 @@ public class SignUpTeacherActivity extends AppCompatActivity {
 
         //email validation
         if(TextUtils.isEmpty(email)) {
-            myEmail.setError("Your Email is Invalid");
+            myEmail.setError("Your Email is Empty");
             focusView = myEmail;
             cancel = true;
         }
@@ -129,8 +130,6 @@ public class SignUpTeacherActivity extends AppCompatActivity {
 
         Matcher m = p.matcher(contact);
         return (m.find() && m.group().equals(contact));
-
-
     }
 
     private void createUser() {
@@ -177,8 +176,9 @@ public class SignUpTeacherActivity extends AppCompatActivity {
         String em =  myEmail.getText().toString();
         String ct =  myContact.getText().toString();
         String sub =  mySubject.getText().toString();
+        String stan = myStandard.getText().toString();
 
-        TeacherModel tm = new TeacherModel(fn, ln, em, ct, sub);
+        TeacherModel tm = new TeacherModel(fn, ln, em, ct, sub, stan);
         String userName = Objects.requireNonNull(myAuth.getCurrentUser()).getUid();
         ref.child(userName).setValue(tm).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

@@ -36,9 +36,9 @@ import java.util.Objects;
 //class about teacher
 public class TeacherAccountInfo extends AppCompatActivity {
 
-    String firstName, lastName, contact, email, subject;
+    String firstName, lastName, contact, email, subject, standard;
 
-    TextView firstNameText, lastNameText, contactText, emailText, subjectText;
+    TextView firstNameText, lastNameText, contactText, emailText, subjectText, standardText;
     Button updateButton, backButton;
 
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
@@ -56,6 +56,8 @@ public class TeacherAccountInfo extends AppCompatActivity {
         contactText = findViewById(R.id.PhoneTextShow);
         emailText = findViewById(R.id.EmailTextShow);
         subjectText = findViewById(R.id.subjectShow);
+        standardText = findViewById(R.id.standardShow);
+
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -67,12 +69,14 @@ public class TeacherAccountInfo extends AppCompatActivity {
                 contact = model.myContact;
                 email = model.myEmail;
                 subject = model.mySubject;
+                standard = model.myStandard;
 
                 firstNameText.setText(firstName);
                 lastNameText.setText(lastName);
                 contactText.setText(contact);
                 emailText.setText(email);
                 subjectText.setText(subject);
+                standardText.setText(standard);
             }
 
             @Override
@@ -96,6 +100,7 @@ public class TeacherAccountInfo extends AppCompatActivity {
                 final EditText email = myView.findViewById(R.id.updateEmailProfile);
                 final EditText contact = myView.findViewById(R.id.updateContactProfile);
                 final EditText subject = myView.findViewById(R.id.updateSubjectProfile);
+                final EditText standard = myView.findViewById(R.id.updateStandardProfile);
                 Button submit = myView.findViewById(R.id.submitProfile);
 
                 firstName.setText(model.getFirstName());
@@ -103,6 +108,7 @@ public class TeacherAccountInfo extends AppCompatActivity {
                 email.setText(model.getMyEmail());
                 contact.setText(model.getMyContact());
                 subject.setText(model.getMySubject());
+                standard.setText(model.getMyStandard());
 
                 dialogPlus.show();
 
@@ -115,6 +121,7 @@ public class TeacherAccountInfo extends AppCompatActivity {
                         map.put("myEmail", email.getText().toString());
                         map.put("myContact", contact.getText().toString());
                         map.put("mySubject", subject.getText().toString());
+                        map.put("myStandard", standard.getText().toString());
 
                         ref.updateChildren(map)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
