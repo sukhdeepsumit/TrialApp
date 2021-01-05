@@ -76,7 +76,7 @@
         android:id="@+id/StudentStandard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="text"
         android:textColorHint="#fff"
         android:hint="Standard: "
         android:textColor="#fff"
