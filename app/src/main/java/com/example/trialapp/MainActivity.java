@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.example.trialapp.StudentActivity.LogInStudentActivity;
 import com.example.trialapp.TeacherActivity.LogInTeacherActivity;
-
+//push ni ho ra tha to cmmnt
 public class MainActivity extends AppCompatActivity {
     ImageView student, teacher;
 
