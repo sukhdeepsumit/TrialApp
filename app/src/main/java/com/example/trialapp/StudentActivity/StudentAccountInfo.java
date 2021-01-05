@@ -36,12 +36,12 @@ import java.util.Map;
 import java.util.Objects;
 
 public class StudentAccountInfo extends AppCompatActivity {
-    String firstName, lastName, email, contact;
-    TextView firstNameText, lastNameText, emailText, contactText;
+    String firstName, lastName, email, contact, standard;
+    TextView firstNameText, lastNameText, emailText, contactText, standardText;
     Button update, back;
 
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Student's Profile").child(user);;
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_Profile").child(user);;
 
     StudentModel model;
 
@@ -54,6 +54,7 @@ public class StudentAccountInfo extends AppCompatActivity {
         lastNameText=findViewById(R.id.lastNameShow);
         emailText=findViewById(R.id.EmailTextShow);
         contactText=findViewById(R.id.PhoneTextShow);
+        standardText=findViewById(R.id.standardTextShow);
 
        ref.addValueEventListener(new ValueEventListener() {
            @Override
@@ -64,12 +65,14 @@ public class StudentAccountInfo extends AppCompatActivity {
                lastName = model.lastName;
                contact = model.myContact;
                email = model.myEmail;
+               standard = model.myStandard;
 
 
                firstNameText.setText(firstName);
                lastNameText.setText(lastName);
                contactText.setText(contact);
                emailText.setText(email);
+               standardText.setText(standard);
            }
 
            @Override
@@ -85,7 +88,7 @@ public class StudentAccountInfo extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                final DialogPlus dialogPlus=DialogPlus.newDialog(firstNameText.getContext())
-                       .setContentHolder(new ViewHolder(R.layout.dialog_content_teacherprofile))
+                       .setContentHolder(new ViewHolder(R.layout.dialog_content_student_profile))
                        .setExpanded(true, ViewGroup.LayoutParams.WRAP_CONTENT)
                        .create();
 
@@ -94,6 +97,7 @@ public class StudentAccountInfo extends AppCompatActivity {
                final EditText lastName = myView.findViewById(R.id.updateLastNameProfile);
                final EditText email = myView.findViewById(R.id.updateEmailProfile);
                final EditText contact = myView.findViewById(R.id.updateContactProfile);
+               final EditText standard = myView.findViewById(R.id.standardProfile);
 
                Button submit = myView.findViewById(R.id.submitProfile);
 
@@ -101,6 +105,7 @@ public class StudentAccountInfo extends AppCompatActivity {
                lastName.setText(model.getLastName());
                email.setText(model.getMyEmail());
                contact.setText(model.getMyContact());
+               standard.setText(model.getMyStandard());
 
 
                dialogPlus.show();
@@ -113,6 +118,7 @@ public class StudentAccountInfo extends AppCompatActivity {
                        map.put("lastName", lastName.getText().toString());
                        map.put("myEmail", email.getText().toString());
                        map.put("myContact", contact.getText().toString());
+                       map.put("myStandard", standard.getText().toString());
 
 
                        ref.updateChildren(map)

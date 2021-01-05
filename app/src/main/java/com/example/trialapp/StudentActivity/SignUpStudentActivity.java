@@ -30,20 +30,9 @@ import java.util.regex.Pattern;
 public class SignUpStudentActivity extends AppCompatActivity {
     Button signUpStudentBtn;
     private FirebaseAuth mAuth;
-    EditText fName, lName, mEmail,mContact,mPwd,mCnfPwd;
+    EditText fName, lName, mEmail,mContact,mPwd,mCnfPwd, mStandard;
     ProgressBar progressBar;
-    DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Student's Profile");
-
-    /*
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
-        Toast.makeText(this, "Already In", Toast.LENGTH_SHORT).show();
-
-    }
-     */
+    DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Students_Profile");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +45,11 @@ public class SignUpStudentActivity extends AppCompatActivity {
         lName=findViewById(R.id.lastName);
         mEmail=findViewById(R.id.studentEmailId);
         mContact=findViewById(R.id.mobileNum);
+        mStandard=findViewById(R.id.StudentStandard);
         mPwd=findViewById(R.id.signUpPassword);
         mCnfPwd=findViewById(R.id.confirmPassword);
+
+
         progressBar=findViewById(R.id.progressBar);
         mAuth= FirebaseAuth.getInstance();
 
@@ -76,6 +68,7 @@ public class SignUpStudentActivity extends AppCompatActivity {
 
                 final  String myEmail=mEmail.getText().toString().trim();
                 final String mobNum=mContact.getText().toString().trim();
+                final String stan = mStandard.getText().toString().trim();
                 final String password= mPwd.getText().toString().trim();
                 final String cnfPassword=mCnfPwd.getText().toString().trim();
 
@@ -94,7 +87,6 @@ public class SignUpStudentActivity extends AppCompatActivity {
                 {
                     mContact.setError("Your contact is invalid");
                     mContact.requestFocus();
-
                 }
 
                 else if(TextUtils.isEmpty(password) )
@@ -129,8 +121,6 @@ public class SignUpStudentActivity extends AppCompatActivity {
                                         Toast.makeText(SignUpStudentActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
                                         saveStudentProfileDetails();
                                         startActivity(new Intent(SignUpStudentActivity.this, LogInStudentActivity.class));
-
-
                                     }
                                     else {
                                         // If sign in fails, display a message to the user.
@@ -149,8 +139,6 @@ public class SignUpStudentActivity extends AppCompatActivity {
 
         Matcher m = p.matcher(contact);
         return (m.find() && m.group().equals(contact));
-
-
     }
 
     private void hideKeybaord(View v) {
@@ -164,8 +152,9 @@ public class SignUpStudentActivity extends AppCompatActivity {
         String ln = lName.getText().toString();
         String em =  mEmail.getText().toString();
         String ct =  mContact.getText().toString();
+        String sn = mStandard.getText().toString();
 
-        StudentModel sm= new StudentModel(fn,ln,em,ct);
+        StudentModel sm= new StudentModel(fn,ln,em,ct, sn);
         String user= Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         myRef.child(user).setValue(sm).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

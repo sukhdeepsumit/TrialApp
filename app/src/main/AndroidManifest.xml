@@ -13,7 +13,6 @@
         <activity android:name=".TeacherActivity.TeacherForgotPwd" />
         <activity android:name=".MainActivity" />
         <activity android:name=".StudentActivity.StudentAccountInfo" />
-        <activity android:name=".TeacherAddForm" />
         <activity android:name=".TeacherActivity.TeacherAccountInfo" />
         <activity android:name=".StudentActivity.StudentHomeScreen" />
         <activity android:name=".TeacherDatabase.StudentDetails" />

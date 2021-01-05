@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import com.example.trialapp.AllTeacherRecord.AllTeacherRecords;
 import com.example.trialapp.R;
-import com.example.trialapp.TeacherAddForm;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;

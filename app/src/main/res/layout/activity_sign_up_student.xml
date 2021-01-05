@@ -7,10 +7,8 @@
     android:background="@drawable/signupbg"
     android:backgroundTint="#15FFFFFF"
     android:backgroundTintMode="src_over"
-android:orientation="vertical"
-
+    android:orientation="vertical"
     tools:context=".StudentActivity.SignUpStudentActivity">
-
 
     <TextView
         android:id="@+id/textViewSignUp"
@@ -20,13 +18,14 @@ android:orientation="vertical"
         android:fontFamily="@font/bungee"
         android:text="Sign Up"
         android:textAllCaps="false"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
         android:textColor="#fff"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/firstName"
         android:layout_width="match_parent"
@@ -35,9 +34,9 @@ android:orientation="vertical"
         android:hint="First Name: "
         android:textColor="#fff"
         android:layout_below="@+id/textViewSignUp"
-
         android:layout_marginTop="52dp"
         />
+
     <EditText
         android:id="@+id/lastName"
         android:layout_width="match_parent"
@@ -48,6 +47,7 @@ android:orientation="vertical"
         android:layout_below="@+id/firstName"
         android:layout_marginTop="8dp"
         />
+
     <EditText
         android:id="@+id/studentEmailId"
         android:layout_width="match_parent"
@@ -59,6 +59,7 @@ android:orientation="vertical"
         android:layout_marginTop="8dp"
         android:inputType="textEmailAddress"
         />
+
     <EditText
         android:id="@+id/mobileNum"
         android:layout_width="match_parent"
@@ -70,42 +71,53 @@ android:orientation="vertical"
         android:layout_below="@+id/studentEmailId"
         android:layout_marginTop="8dp"
         />
+
+    <EditText
+        android:id="@+id/StudentStandard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColorHint="#fff"
+        android:hint="Standard: "
+        android:textColor="#fff"
+        android:layout_below="@+id/mobileNum"
+        android:layout_marginTop="8dp"
+        />
+
     <EditText
         android:id="@+id/signUpPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:textColor="#fff"
-
         android:textColorHint="#fff"
         android:hint="Password: "
-        android:layout_below="@+id/mobileNum"
+        android:layout_below="@+id/StudentStandard"
         android:layout_marginTop="8dp"
         />
+
     <EditText
         android:id="@+id/confirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:textColor="#fff"
-
         android:textColorHint="#fff"
         android:hint="Confirm Password: "
         android:layout_below="@+id/signUpPassword"
         android:layout_marginTop="8dp"
         />
+
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:textAllCaps="false"
-
         android:layout_below="@+id/confirmPassword"
         android:background="@drawable/custom_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:textColor="#fff"
-
         android:id="@+id/signUpButton"/>
 
     <ProgressBar
@@ -117,10 +129,6 @@ android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:visibility="invisible"
-
-
-
         />
-
 
 </RelativeLayout>
