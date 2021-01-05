@@ -1,4 +1,4 @@
-package com.example.trialapp.AllTeacherRecord;
+package com.example.trialapp.StudentDatabase;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,11 +27,12 @@ public class TeacherRecordAdapter extends FirebaseRecyclerAdapter<ModelTeacherRe
 
     @Override
     protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull ModelTeacherRecord model) {
-        holder.name.setText(model.getName());
-        holder.email.setText(model.getEmail());
-        holder.phone.setText(model.getPhone());
-        holder.subject.setText(model.getSubject());
-        holder.standard.setText(model.getStandard());
+        String name = model.getFirstName() + " " + model.getLastName();
+        holder.name.setText(name);
+        holder.email.setText(model.getMyEmail());
+        holder.phone.setText(model.getMyContact());
+        holder.subject.setText(model.getMySubject());
+        holder.standard.setText(model.getMyStandard());
 
     }
 

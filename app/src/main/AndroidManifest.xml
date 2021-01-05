@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AllTeacherRecord.AllTeacherRecords" />
+        <activity android:name=".StudentDatabase.AllTeacherRecords" />
         <activity android:name=".TeacherActivity.TeacherForgotPwd" />
         <activity android:name=".MainActivity" />
         <activity android:name=".StudentActivity.StudentAccountInfo" />

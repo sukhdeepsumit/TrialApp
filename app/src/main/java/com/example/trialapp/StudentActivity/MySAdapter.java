@@ -127,11 +127,9 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {  }
                 });
-
                 builder.show();
             }
         });
-
     }
 
     @NonNull
@@ -140,7 +138,6 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.teacher_card, parent, false);
         return new MySAdapter.myViewHolder(view);
     }
-
 
     static class myViewHolder extends RecyclerView.ViewHolder
     {
@@ -159,10 +156,6 @@ public class MySAdapter extends FirebaseRecyclerAdapter<SModel,MySAdapter.myView
 
             update = itemView.findViewById(R.id.update);
             delete = itemView.findViewById(R.id.delete);
-
         }
-
     }
-
-
 }

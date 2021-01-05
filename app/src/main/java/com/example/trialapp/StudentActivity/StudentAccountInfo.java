@@ -41,7 +41,7 @@ public class StudentAccountInfo extends AppCompatActivity {
     Button update, back;
 
     String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_Profile").child(user);;
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Students_Profile").child(user);
 
     StudentModel model;
 
@@ -106,7 +106,6 @@ public class StudentAccountInfo extends AppCompatActivity {
                email.setText(model.getMyEmail());
                contact.setText(model.getMyContact());
                standard.setText(model.getMyStandard());
-
 
                dialogPlus.show();
 
