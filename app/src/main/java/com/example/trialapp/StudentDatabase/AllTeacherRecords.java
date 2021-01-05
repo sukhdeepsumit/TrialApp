@@ -1,4 +1,4 @@
-package com.example.trialapp.AllTeacherRecord;
+package com.example.trialapp.StudentDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,8 +21,8 @@ public class AllTeacherRecords extends AppCompatActivity {
     RecyclerView recyclerView;
     TeacherRecordAdapter adapter;
 
-    String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Teacher_Records");
+    //String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Teachers_profile");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class AllTeacherRecords extends AppCompatActivity {
 
         FirebaseRecyclerOptions<ModelTeacherRecord> options =
                 new FirebaseRecyclerOptions.Builder<ModelTeacherRecord>()
-                .setQuery(reference.child(user), ModelTeacherRecord.class)
+                .setQuery(reference, ModelTeacherRecord.class)
                 .build();
 
         adapter = new TeacherRecordAdapter(options);

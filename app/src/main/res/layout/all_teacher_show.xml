@@ -43,11 +43,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="36dp"
-            android:text="Phone Number :"
+            android:layout_marginTop="10dp"
+            android:text="Subjects :"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lastName" />
+            app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
 
         <TextView
             android:id="@+id/emailTextView"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
-            android:text="Subjects :"
+            android:text="Contact :"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lastName" />
@@ -86,8 +86,8 @@
             android:id="@+id/phoneShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="16dp"
             android:text="TextView"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/emailTextView"
@@ -97,8 +97,8 @@
             android:id="@+id/subjectShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="12dp"
             android:text="TextView"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/phoneTextView"
@@ -128,21 +128,21 @@
 
         <Button
             android:id="@+id/add"
-            android:layout_width="72dp"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginEnd="36dp"
+            android:layout_marginStart="52dp"
             android:layout_marginBottom="6dp"
             android:background="@drawable/custom_button"
-            android:text="Add"
+            android:text="Send Request"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/call" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/call"
             android:layout_width="72dp"
             android:layout_height="32dp"
-            android:layout_marginEnd="86dp"
+            android:layout_marginEnd="75dp"
             android:layout_marginBottom="6dp"
             android:background="@drawable/custom_button"
             android:text="Call"
